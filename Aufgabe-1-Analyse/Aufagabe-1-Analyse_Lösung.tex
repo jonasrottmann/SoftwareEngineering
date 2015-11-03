@@ -1,0 +1,91 @@
+\documentclass{scrartcl} %KOMA-Script replacement to <article>
+
+% ----- IMPORTS ---------------------------------------------------------------
+\usepackage[ngerman]{babel}
+\usepackage[ngerman]{datetime}
+\usepackage[utf8x]{inputenc}
+
+% ----- META ------------------------------------------------------------------
+\title{Software Engineering}
+\subtitle{WS2015/2016} %Only in KOMA-Script documentclass
+\author{
+	\textsc{Tim Bierenbreier}\\
+	\normalsize Matrikel Nr.: XXXXX
+	\and
+	\textsc{Jonas Rottmann}\\
+	\normalsize Matrikel Nr.: 44501
+	\and
+	\textsc{Jonas Weber}\\
+	\normalsize Matrikel Nr.: XXXXX
+}
+
+% ----- CONTENT ---------------------------------------------------------------
+\begin{document}
+\maketitle
+\section{Use Cases}
+
+\begin{description}
+   \item[Spielfeld vorbereiten]~\par
+   \begin{description}
+      \item[Akteure] Spielleiter (Computer)
+      \item[Priorität]  1
+      \item[Beschreibung] Die 4 Kategorien werden bestimmt und die entsprechnenden Wissensfragen gemischt und verdeckt auf den Kategoriefeldern platziert. Jeder Spieler wählt eine Farbe und erhält drei Wissenssteine sowie die Wissenstandsanzeiger, die entsprechend auf dem Spielfeld platziert werden.
+      \item[Vorbedingungen] Keine
+      \item[Referenz] 
+   \end{description}
+\end{description}
+\begin{description}
+   \item[Beginnenden Spieler bestimmen]~\par
+   \begin{description}
+      \item[Akteure] Alle Spieler
+      \item[Priorität]  
+      \item[Beschreibung] Alle Spieler würfeln einmal, wer die höchste Augenanzahl würfelt beginnt. Falls zwei (oder mehr) Spieler die gleiche Anzahl würfeln, müssen diese erneut gegeneinander antreten. (rekursiv?)
+      \item[Vorbedingungen] 
+      \item[Referenz] 
+   \end{description}
+\end{description}
+\begin{description}
+   \item[Zug spielen]~\par
+   \begin{description}
+      \item[Akteure] Ein Spieler
+      \item[Priorität] 2 (Höher als "Beginenden Spieler bestimmen", da der beginnende Spieler einfach am Anfang des Projektes "gemockt" werden kann)
+      \item[Beschreibung] Der Spieler würfelt. Wenn eine 6 fällt muss der Spieler einen Wissenstreiter auf das SPielfeld bringen, indem er diesen auf das Feld seiner Farbe stellt. Hat der Spieler keine 6 gewüfelt, oder sind bereits alle Wissensstreiter auf dem Feld, darf der Spieler EINEN seiner Wissensstreiter um die gewürfelte Augenzahl nach vorne ziehen. Dabei darf er kein Feld betreten auf dem bereits ein Wissenstreiter seiner Farbe steht.
+Hat der Spieler keine Wissensstreiter auf dem Feld, darf er maximal 3 mal würfeln bis eine 6 fällt, ist dies nicht der Fall, oder ist der Zug beendet, so muss der Spieler zu seiner Rechten weiterziehen.
+      \item[Vorbedingungen] 
+      \item[Referenz] 
+   \end{description}
+\end{description}
+\begin{description}
+   \item[Frage stellen]~\par
+   \begin{description}
+      \item[Akteure] Zwei Spieler
+      \item[Priorität]
+      \item[Beschreibung] Spieler stellt anderem Spieler Frage aus einer der 4 Kategorien.
+
+1. Wenn Frage korrekt beantwortet wird, wird Wissenstandszeiger in dieser Kategorie inkrementiert. Wenn der Wissenstandszeiger dieser Kategorie auf höchster Stufe ist, kann eine beliebige andere Kategorie inkrementiert werden. Der Wissensstreiter des geprüften Spielers muss auf dessen Startfeld zurückgesetzt werden, ist dieses besetzt Heimatfeld.
+2. Konnte der Spieler die Frage nicht beantworten, wird der Wissenstandsanzeiger dieser Kategorie dekrementiert (0 Minumum). Der Wissensstreiter des geprüften Spielers kommt ins Heimatfeld und der Fragesteller kann eine Frage der entsprechenden Kategorie beantworten. 
+      \item[Vorbedingungen] Spieler kommt auf ein Feld auf dem ein anderer Spieler steht.
+      \item[Referenz] 
+   \end{description}
+\end{description}
+\begin{description}
+   \item[Frage an sich selbst stellen]~\par
+   \begin{description}
+      \item[Akteure] Ein Spieler
+      \item[Priorität]
+      \item[Beschreibung] Ergänzung zu 4. Wissensstreiter dürfen Felder betreten, die durch einen eigenen Wissensstreiter schon besetzt sind. In diesem Fall stellt der Spieler sich selbst seine Frage. Unterschied zu 4: Bei Falschantwort entfällt die Option zu einer zweiten Frage.
+      \item[Vorbedingungen] Spieler kommt auf ein Feld auf dem er selbst steht. %ODER wenn er eine Fragegestellt hat, die nicht beantwortet wurde und er sich dazu entscheidet es zu versuchen.
+      \item[Referenz] 
+   \end{description}
+\end{description}
+\begin{description}
+   \item[Sieger bestimmen]~\par
+   \begin{description}
+      \item[Akteure] Spielleiter (Computer)
+      \item[Priorität]
+      \item[Beschreibung] Zeige den Gewinner an und biete an eine neue Runde zu starten.
+      \item[Vorbedingungen] Ein Spieler hat seine Wissenstandanzeige komplett gefüllt.
+      \item[Referenz] 
+   \end{description}
+\end{description}
+\end{document}
