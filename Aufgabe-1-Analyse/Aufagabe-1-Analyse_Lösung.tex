@@ -10,7 +10,7 @@
 \subtitle{WS2015/2016} %Only in KOMA-Script documentclass
 \author{
 	\textsc{Tim Bierenbreier}\\
-	\normalsize Matrikel Nr.: XXXXX
+	\normalsize Matrikel Nr.: 43235
 	\and
 	\textsc{Jonas Rottmann}\\
 	\normalsize Matrikel Nr.: 44501
@@ -28,8 +28,8 @@
    \item[Spielfeld vorbereiten]~\par
    \begin{description}
       \item[Akteure] Spielleiter (Computer)
-      \item[Priorität] essentiell
-      \item[Beschreibung] Die 4 Kategorien werden bestimmt und die entsprechnenden Wissensfragen gemischt und verdeckt auf den Kategoriefeldern platziert. Jeder Spieler wählt eine Farbe und erhält drei Wissensstreiter sowie die Wissenstandsanzeiger, die entsprechend auf dem Spielfeld platziert werden.
+      \item[Priorität] essentiell\\Grundlage für den weiteren Spielverlauf.
+      \item[Beschreibung] Die Spieler bestimmen die 4 Kategorien. Der Spielleiter mischt die entsprechnenden Fragen. Jeder Spieler wählt eine Farbe. Die Wissensstreiter jedes Spielers werden auf die entsprechenden Heimatfelder gesetzt und die Wissenstandsanzeiger ggf. zurückgesetzt.
       \item[Vorbedingungen] Ein Spiel wird von den Spielern gestartet.          
    \end{description}
    
@@ -37,25 +37,25 @@
    \item[Beginnenden Spieler bestimmen]~\par
    \begin{description}
       \item[Akteure] Alle Spieler
-      \item[Priorität] unwichtig
+      \item[Priorität] unwichtig\\Im Entwicklungsprozess nicht wichtig, da der beginnende Spieler leicht ohne Nebenwirkungen manuell bestimmt werden kann.
       \item[Beschreibung] Alle Spieler würfeln einmal, die höchste Augenanzahl beginnt. Falls mehr als ein Spieler die höchste Zahl würfelt, müssen diese Spieler erneut gegeneinander würfeln.
-      \item[Vorbedingungen] Das Spielfeld wurde vorbereitet.
+      \item[Vorbedingungen] Es sind 4 Spieler bekannt und es gibt einen Würfel.
    \end{description}
    
 
    \item[Zug spielen]~\par
    \begin{description}
       \item[Akteure] Ein Spieler
-      \item[Priorität] essentiell
-      \item[Beschreibung] Der Spieler würfelt. Wenn eine 6 fällt muss der Spieler einen Wissenstreiter auf das Spielfeld bringen, indem er diesen auf das Feld seiner Farbe stellt. Hat der Spieler keine 6 gewüfelt, oder sind bereits alle Wissensstreiter auf dem Feld, darf der Spieler EINEN seiner Wissensstreiter um die gewürfelte Augenzahl nach vorne ziehen. Dabei darf er kein Feld betreten auf dem bereits ein Wissenstreiter seiner Farbe steht. Hat der Spieler keine Wissensstreiter auf dem Feld, darf er maximal 3 mal würfeln bis eine 6 fällt, ist dies nicht der Fall, oder ist der Zug beendet, so muss der Spieler zu seiner Rechten weiterziehen.
+      \item[Priorität] essentiell\\Hauptbestandteil des Spiels.
+      \item[Beschreibung] Der Spieler würfelt. Wenn eine 6 fällt muss der Spieler einen Wissenstreiter auf das Spielfeld (auf das Feld seiner Farbe) bringen. Hat der Spieler keine 6 gewüfelt, oder sind bereits alle Wissensstreiter auf dem Feld, darf der Spieler einen seiner Wissensstreiter um die gewürfelte Augenzahl nach vorne ziehen. Hat der Spieler keine Wissensstreiter auf dem Feld, darf er maximal 3 mal würfeln bis eine 6 fällt. Wenn der Spielzug beendet wurde ist der Spieler zu seiner Rechten am Zug.
       \item[Vorbedingungen] Ein Spieler ist am Zug.
    \end{description}
    
 
-   \item[Frage stellen]~\par
+   \item[Wissenstest]~\par
    \begin{description}
       \item[Akteure] Zwei Spieler
-      \item[Priorität]
+      \item[Priorität] essentiell\\Hauptbestandteil des Spiels.
       \item[Beschreibung] Spieler stellt anderem Spieler Frage aus einer der 4 Kategorien.\\
 Frage wird korrekt beantwortet: Wissenstandsanzeiger dieser Kategorie wird inkrementiert. Wenn der Wissenstandszeiger dieser Kategorie auf höchster Stufe ist, kann eine beliebige andere Kategorie inkrementiert werden. Der Wissensstreiter des geprüften Spielers muss auf dessen Startfeld zurückgesetzt werden, ist dieses besetzt Heimatfeld.\\
 Frage konnte nicht beantwortet werden: Der Wissenstandsanzeiger dieser Kategorie wird dekrementiert. Der Wissensstreiter des geprüften Spielers kommt ins Heimatfeld und der Fragesteller kann eine Frage der entsprechenden Kategorie beantworten.
@@ -63,19 +63,19 @@ Frage konnte nicht beantwortet werden: Der Wissenstandsanzeiger dieser Kategorie
    \end{description}
    
 
-   \item[Variante: Frage an sich selbst stellen]~\par
+   \item[Variante extends Wissenstest]~\par
    \begin{description}
       \item[Akteure] Ein Spieler
-      \item[Priorität] unwichtig
-      \item[Beschreibung] Ergänzung zu "Frage stellen". Wissensstreiter dürfen Felder betreten, die durch einen eigenen Wissensstreiter schon besetzt sind. In diesem Fall stellt der Spieler sich selbst seine Frage. Unterschied zu 4: Bei Falschantwort entfällt die Option zu einer zweiten Frage.
-      \item[Vorbedingungen] Spieler kommt auf ein Feld auf dem er selbst steht. %ODER wenn er eine Fragegestellt hat, die nicht beantwortet wurde und er sich dazu entscheidet es zu versuchen.
+      \item[Priorität] unwichtig\\Kann bei funktionierendem Wissenstest einfach nach implementiert werden.
+      \item[Beschreibung] Unterschied zu Wissenstest: Bei Falschantwort entfällt die Option zu einer zweiten Frage.
+      \item[Vorbedingungen] Spieler kommt auf ein Feld auf dem er selbst steht.
    \end{description}
    
 
    \item[Sieger bestimmen]~\par
    \begin{description}
       \item[Akteure] Spielleiter (Computer)
-      \item[Priorität] unwichtig
+      \item[Priorität] unwichtig\\Für den Spielverlauf zuerst uninteressant.
       \item[Beschreibung] Zeige den Gewinner an und biete an eine neue Runde zu starten.
       \item[Vorbedingungen] Ein Spieler hat seine Wissenstandanzeige komplett gefüllt.
    \end{description}
