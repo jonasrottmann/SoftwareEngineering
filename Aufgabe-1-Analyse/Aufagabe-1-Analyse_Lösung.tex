@@ -23,6 +23,7 @@
 \begin{document}
 \maketitle
 \section{Use Cases}
+\subsection{Priorisierte Use Cases}
 
 \begin{description}
    \item[Spielfeld vorbereiten]~\par
@@ -52,23 +53,32 @@
    \end{description}
    
 
-   \item[Wissenstest]~\par
+   \item[Wissenstest (extends "Zug spielen")]~\par
    \begin{description}
-      \item[Akteure] Zwei Spieler
+      \item[Akteure] Ein oder zwei Spieler
       \item[Priorität] essentiell\\Hauptbestandteil des Spiels.
       \item[Beschreibung] Spieler stellt anderem Spieler Frage aus einer der 4 Kategorien.\\
 Frage wird korrekt beantwortet: Wissenstandsanzeiger dieser Kategorie wird inkrementiert. Wenn der Wissenstandszeiger dieser Kategorie auf höchster Stufe ist, kann eine beliebige andere Kategorie inkrementiert werden. Der Wissensstreiter des geprüften Spielers muss auf dessen Startfeld zurückgesetzt werden, ist dieses besetzt Heimatfeld.\\
-Frage konnte nicht beantwortet werden: Der Wissenstandsanzeiger dieser Kategorie wird dekrementiert. Der Wissensstreiter des geprüften Spielers kommt ins Heimatfeld und der Fragesteller kann eine Frage der entsprechenden Kategorie beantworten.
-      \item[Vorbedingungen] Spieler kommt auf ein Feld auf dem ein anderer Spieler steht.
+Frage konnte nicht beantwortet werden: Der Wissenstandsanzeiger dieser Kategorie wird dekrementiert. Der Wissensstreiter des geprüften Spielers kommt ins Heimatfeld.
+      \item[Vorbedingungen] Spieler kommt auf ein Feld auf dem ein Wissensstreiter steht (beliebige Farbe).
+   \end{description}
+
+
+   \item[Anderen Spieler testen (extends "Wissenstest")]~\par
+   \begin{description}
+      \item[Akteure] Zwei Spieler
+      \item[Priorität] essentiell\\Hauptbestandteil des Spiels.
+      \item[Beschreibung] Zusätzlich: Beantwortet der zu testende Spieler die Frage falsch, kann der Fragesteller selbst eine Frage der entsprechenden Kategorie beantworten.
+      \item[Vorbedingungen] Feld ist von einem fremden Wissensstreiter belegt.
    \end{description}
    
 
-   \item[Variante extends Wissenstest]~\par
+   \item[Sich selbst testen (extends "Wissenstest")]~\par
    \begin{description}
       \item[Akteure] Ein Spieler
       \item[Priorität] unwichtig\\Kann bei funktionierendem Wissenstest einfach nach implementiert werden.
-      \item[Beschreibung] Unterschied zu Wissenstest: Bei Falschantwort entfällt die Option zu einer zweiten Frage.
-      \item[Vorbedingungen] Spieler kommt auf ein Feld auf dem er selbst steht.
+      \item[Beschreibung] 
+      \item[Vorbedingungen] Feld ist von einem eigenen Wissensstreiter belegt.
    \end{description}
    
 
@@ -80,4 +90,15 @@ Frage konnte nicht beantwortet werden: Der Wissenstandsanzeiger dieser Kategorie
       \item[Vorbedingungen] Ein Spieler hat seine Wissenstandanzeige komplett gefüllt.
    \end{description}
 \end{description}
+
+\subsection{Use Case Diagram}
+BILD BILD BILD
+
+\subsection{Erste Iteration}
+\begin{itemize}
+   \item Spiefeld vorbereiten
+   \item Zug spielen
+   \item Wissenstest
+\end{itemize}
+
 \end{document}
