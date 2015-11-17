@@ -7,6 +7,7 @@
 *.log
 *.toc
 *.ist
+*.fls
 *.acn
 *.acr
 *.alg
