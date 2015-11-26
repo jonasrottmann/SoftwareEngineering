@@ -13,7 +13,7 @@
 % ----- META ------------------------------------------------------------------
 \title{Software Engineering\\\small{WS2015/2016}}
 \author{
-	\textsc{Tim Bierenbreier}\footnote{liebt \LaTeX}\\
+	\textsc{Tim Bierenbreier}\\
 	\normalsize Matrikel Nr.: 43235
 	\and
 	\textsc{Jonas Rottmann}\\
@@ -91,9 +91,9 @@ Frage konnte nicht beantwortet werden: Der Wissenstandsanzeiger dieser Kategorie
    \end{description}
 
 
-   \item[Sieger bestimmen]~\par
+   \item[Siegerehrung]~\par
    \begin{description}
-      \item[Akteure] Spielleiter (Computer)
+      \item[Akteure] Ein Spieler
       \item[Priorität] unwichtig\\Für den Spielverlauf zuerst uninteressant.
       \item[Beschreibung] Zeige den Gewinner an und biete an eine neue Runde zu starten.
       \item[Vorbedingungen] Ein Spieler hat seine Wissenstandanzeige komplett gefüllt.
@@ -174,33 +174,32 @@ Frage konnte nicht beantwortet werden: Der Wissenstandsanzeiger dieser Kategorie
 	\item[Bemerkungen] Keine
 	\item[Ausnahmen] Keine
 	\item[Vorbedingungen] Kategorien wurden gewählt.
+	\item[Nachbedingungen] Erstellung wird beendet.
+\end{description}
+
+\paragraph{Erstellung beenden}
+\begin{description}
+	\item[Name] Erstellung beenden
+	\item[Verantwortlichkeit] Die Erstellung wird beendet, falls 4 Spieler registriert wurden oder nicht mehr Spieler registriert werden wollen.
+	\item[Bemerkungen] Keine
+	\item[Ausnahmen] Keine
+	\item[Vorbedingungen] Kategorien wurden gewählt, mindestens 2 Spieler wurden registriert.
 	\item[Nachbedingungen] Das Spiel beginnt.
 \end{description}
 
-
-
-\subsubsection{Spielzug}
+\subsubsection{Zug spielen}
 \begin{figure}[H]
 	\includegraphics[width=\textwidth]{Diagramme/SequenceDiagram-Spielzug.jpg}
 	\centering
 \end{figure}
-
-\paragraph{Zug starten}
-\begin{description}
-	\item[Verantwortlichkeit] Ein Spieler beginnt seinen Zug indem er würfelt.
-	\item[Bemerkungen] Keine
-	\item[Ausnahmen] Keine
-	\item[Vorbedingungen] Der vorherige Spielzug wurde beendet und es wurde noch kein Gewinner ermittelt.
-	\item[Nachbedingungen] Ein Wissensstreiter muss bewegt werden.
-\end{description}
 
 \paragraph{Wissensstreiter wählen}
 \begin{description}
 	\item[Verantwortlichkeit] Der Spieler wählt einen seiner Wissensstreiter aus und zieht ihn um n (n ≈ gewürfelte Augenzahl) Felder nach vorne.
 	\item[Bemerkungen] Bei einer Augenanzahl kleiner 6 darf der Spieler jeden seiner auf dem Spielfeld befindlichen Wissensstreiter wählen und bewegen. Bei einer Augenanzahl von 6 muss der Spieler, falls noch nicht alle seiner Wissensstreiter auf dem Spielfeld sind einen Wissensstreiter aus seinem Heimatfeld auf sein Startfeld setzen.
 	\item[Ausnahmen] Hat der Spieler keine Wissensstreiter auf dem Feld und hat keine 6 gewürfelt, darf er maximal 3 mal würfeln bis eine 6 fällt. Dann darf ein Wissensstreiter auf das Startfeld gesetzt werden.
-	\item[Vorbedingungen] Der Spieler hat gewürfelt.
-	\item[Nachbedingungen]
+	\item[Vorbedingungen] Das System hat für den Spieler gewürfelt.
+	\item[Nachbedingungen] Ausgewählter Wissensstreiter wird bewegt.
 \end{description}
 
 
@@ -213,10 +212,10 @@ Frage konnte nicht beantwortet werden: Der Wissenstandsanzeiger dieser Kategorie
 
 \paragraph{Kategorie wählen}
 \begin{description}
-	\item[Verantwortlichkeit] Der testende Spieler wählt eine der 4 Kategorien.
-	\item[Bemerkungen] Wurde die ursprüngliche Frage falsch beantwortet, erhält der Frgestelle die Möglichkeit selbst eine Kategorie für eine weitere Frage zu wählen, die er selbst beantworten muss.
+	\item[Verantwortlichkeit] Der testende Spieler wählt eine der 4 Kategorien um daraus vom System eine Frage stellen zu lassen.
+	\item[Bemerkungen] Keine
 	\item[Ausnahmen] Keine
-	\item[Vorbedingungen] Ein Spieler zieht einen seiner Wissensstreiter auf ein Feld, das von einem Wissensstreiter besetzt ist.
+	\item[Vorbedingungen] Ein Spieler zieht einen seiner Wissensstreiter auf ein Feld, das schon von einem Wissensstreiter besetzt ist.
 	\item[Nachbedingungen] Die Frage muss beantwortet werden.
 \end{description}
 
@@ -226,9 +225,16 @@ Frage konnte nicht beantwortet werden: Der Wissenstandsanzeiger dieser Kategorie
 	\item[Bemerkungen] Keine
 	\item[Ausnahmen] Keine
 	\item[Vorbedingungen] Eine Kategorie wurde gewählt.
-	\item[Nachbedingungen] Darauf wird die Position des Wissensstreiter und der Wissensstandanzeiger des Spielers verändert (siehe Use-Case "`Wissen testen"').
+	\item[Nachbedingungen] Hat der Spieler die Frage richtig beantwortet, wird sein Wissensstandszeiger inkrementiert. Hat sein Wissensstandszeiger bereits den Maximalwert 3, darf er eine beliebige andere Kategorie wählen, um seinen Wissensstandszeiger in dieser zu erhöhen. Ist die Frage falsch beantwortet worden, wird der Wissensstandszeiger des Befragten in dieser Kategorie dekrementiert. Ist der Fragesteller darüberhinaus nicht derselbe Spieler wie der Befragte, darf der Fragesteller die Frage selbst versuchen zu beantworten.
 \end{description}
 
-\chapter{Design}
+\paragraph{Wissensstandszeiger erhöhen}
+\begin{description}
+	\item[Verantwortlichkeit] Der Spieler wählt eine Kategorie aus, um in dieser seinen Wissensstandszeiger zu erhöhen.
+	\item[Bemerkungen] Keine
+	\item[Ausnahmen] Keine
+	\item[Vorbedingungen] Der Spieler hat die Frage richtig beantwortet und in der Kategorie der gestellten Frage seinen Wissensstandszeiger auf dem Maximalwert 3.
+	\item[Nachbedingungen] Nächster Spieler ist mit seinem Zug an der Reihe, falls der jetzige Spieler nicht durch diese Inkrementierung die Wissensstandszeiger aller Kategorien auf 3 hat und somit gewonnen hat.
+\end{description}
 
 \end{document}
