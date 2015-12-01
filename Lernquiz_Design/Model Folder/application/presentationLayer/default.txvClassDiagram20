@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<nodeSet  version="1.1">
+	<view uin="V1hexuhihn96zjujlreon">
+		<property name="$defaultDiagram" value="true"/>
+		<property name="$metaclass" value="ClassDiagram20"/>
+		<property name="__options" value="option.nlayout.recursive=true"/>
+		<reference referencedUin="jdt:e_class:src:application.presentationLayer.LQView">
+			<property name="bounds" value="5,5,147,152"/>
+			<property name="location_set_by_user" value="true"/>
+			<reference referencedUin="jdt:l_ast:src:application.presentationLayer.LQView:controller">
+				<property name="sourceAnchor" value="157,101"/>
+				<property name="targetAnchor" value="200,101"/>
+			</reference>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:application.presentationLayer.LQController">
+			<property name="bounds" value="195,35,167,137"/>
+			<property name="location_set_by_user" value="true"/>
+			<reference referencedUin="jdt:l_ast:src:application.presentationLayer.LQController:view">
+				<property name="sourceAnchor" value="200,93"/>
+				<property name="targetAnchor" value="157,93"/>
+			</reference>
+		</reference>
+	</view>
+</nodeSet>

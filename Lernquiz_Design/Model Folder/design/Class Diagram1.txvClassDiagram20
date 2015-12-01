@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<nodeSet  version="1.1">
+	<view uin="V1hexuhihnbui2mbyvtf0">
+		<property name="$metaclass" value="ClassDiagram20"/>
+		<property name="$name" value="Class Diagram1"/>
+		<reference referencedUin="jdt:e_class:src:application.presentationLayer.LQView">
+			<property name="bounds" value="55,35,200,152"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="$shortcutReference" value="true"/>
+			<reference referencedUin="jdt:l_impl:src:application.presentationLayer.LQView:Observer">
+				<property name="sourceAnchor" value="280,95"/>
+				<property name="targetAnchor" value="177,95"/>
+			</reference>
+			<reference referencedUin="jdt:l_ast:src:application.presentationLayer.LQView:controller">
+				<property name="sourceAnchor" value="260,115"/>
+				<property name="targetAnchor" value="459,115"/>
+			</reference>
+			<reference referencedUin="jdt:l_ast:src:application.presentationLayer.LQView:model">
+				<property name="sourceAnchor" value="259,192"/>
+				<property name="targetAnchor" value="260,280"/>
+			</reference>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:application.presentationLayer.LQController">
+			<property name="bounds" value="455,42,200,137"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="collapsedCompartments" value=""/>
+			<property name="$shortcutReference" value="true"/>
+			<reference referencedUin="jdt:l_ast:src:application.presentationLayer.LQController:modelFront">
+				<property name="sourceAnchor" value="502,184"/>
+				<property name="targetAnchor" value="421,281"/>
+			</reference>
+			<reference referencedUin="jdt:l_ast:src:application.presentationLayer.LQController:view">
+				<property name="sourceAnchor" value="460,182"/>
+				<property name="targetAnchor" value="260,182"/>
+				<property name="location_set_by_user" value="true"/>
+			</reference>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:application.applicationLayer.LQModelFront">
+			<property name="bounds" value="255,275,161,201"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="bounds_setted_by_user" value="true"/>
+			<property name="$shortcutReference" value="true"/>
+			<reference referencedUin="jdt:l_ast:src:application.applicationLayer.LQModelFront:coreData">
+				<property name="sourceAnchor" value="201,71"/>
+				<property name="targetAnchor" value="260,71"/>
+			</reference>
+			<reference referencedUin="jdt:l_gnt:src:application.applicationLayer.LQModelFront:LQSubject">
+				<property name="sourceAnchor" value="421,414"/>
+				<property name="targetAnchor" value="639,414"/>
+			</reference>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:application.applicationLayer.LQSubject">
+			<property name="bounds" value="634,343,200,152"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="$shortcutReference" value="true"/>
+		</reference>
+	</view>
+</nodeSet>

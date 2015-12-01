@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<nodeSet  version="1.1">
+	<view uin="V1hexuhihn986z2qdx46d">
+		<property name="$defaultDiagram" value="true"/>
+		<property name="$metaclass" value="ClassDiagram20"/>
+		<property name="__options" value="option.nlayout.recursive=true"/>
+		<reference referencedUin="jdt:e_class:src:application.applicationLayer.LQModelFront">
+			<property name="bounds" value="5,5,110,92"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="collapsedCompartments" value="Operation20"/>
+			<reference referencedUin="jdt:l_gnt:src:application.applicationLayer.LQModelFront:LQSubject">
+				<property name="sourceAnchor" value="120,71"/>
+				<property name="targetAnchor" value="260,71"/>
+			</reference>
+		</reference>
+	</view>
+</nodeSet>
