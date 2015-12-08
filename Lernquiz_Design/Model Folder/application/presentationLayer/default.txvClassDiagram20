@@ -9,6 +9,7 @@
 		<reference referencedUin="jdt:e_class:src:application.presentationLayer.LQView">
 			<property name="bounds" value="5,5,147,152"/>
 			<property name="location_set_by_user" value="true"/>
+			<property name="collapsedCompartments" value=""/>
 			<reference referencedUin="jdt:l_ast:src:application.presentationLayer.LQView:controller">
 				<property name="sourceAnchor" value="157,101"/>
 				<property name="targetAnchor" value="200,101"/>
