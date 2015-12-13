@@ -20,7 +20,7 @@ public abstract class LQSubject {
 		this.observers.remove(obs);
 	};
 	
-	public void notifyObserver(){
+	public void notifyObservers(){
 		for (Observer observer : this.observers) {
 			observer.update(null, null);
 		}
