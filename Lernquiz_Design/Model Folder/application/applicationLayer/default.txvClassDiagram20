@@ -12,11 +12,27 @@
 			<property name="collapsedCompartments" value="Operation20"/>
 			<reference referencedUin="jdt:l_gnt:src:application.applicationLayer.LQModelFront:LQSubject">
 				<property name="sourceAnchor" value="120,71"/>
-				<property name="targetAnchor" value="139,71"/>
+				<property name="targetAnchor" value="200,71"/>
 			</reference>
 		</reference>
 		<reference referencedUin="jdt:e_class:src:application.applicationLayer.LQSubject">
-			<property name="bounds" value="134,-4,159,152"/>
+			<property name="bounds" value="195,5,159,152"/>
+			<property name="location_set_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:application.applicationLayer.LernQuiz">
+			<property name="bounds" value="35,195,200,106"/>
+			<property name="location_set_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:application.applicationLayer.Kategorie">
+			<property name="bounds" value="395,-4,83,80"/>
+			<property name="location_set_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:application.applicationLayer.Spieler">
+			<property name="bounds" value="114,104,200,80"/>
+			<property name="location_set_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:application.applicationLayer.Wissensstandszeiger">
+			<property name="bounds" value="392,95,142,80"/>
 			<property name="location_set_by_user" value="true"/>
 		</reference>
 	</view>

@@ -38,7 +38,7 @@
 					<property name="bounds" value="355,218,10,19"/>
 				</reference>
 				<reference referencedUin="label:clientCardinality:design:link:::ieje0rihxfachn3h2co8:8bho0jihxf86dp-4uh0s7">
-					<property name="bounds" value="449,173,10,19"/>
+					<property name="bounds" value="422,186,10,19"/>
 				</reference>
 			</reference>
 			<reference referencedUin="design:link:::ieje0rihxf8vi9-lj3oe4:8bho0jihxf86dp-4uh0s7">
@@ -49,7 +49,7 @@
 					<property name="bounds" value="355,171,10,19"/>
 				</reference>
 				<reference referencedUin="label:clientCardinality:design:link:::ieje0rihxf8vi9-lj3oe4:8bho0jihxf86dp-4uh0s7">
-					<property name="bounds" value="430,171,10,19"/>
+					<property name="bounds" value="440,171,10,19"/>
 				</reference>
 			</reference>
 		</reference>
@@ -62,7 +62,7 @@
 				<property name="targetAnchor" value="240,193"/>
 				<property name="bendpoints" value=""/>
 				<reference referencedUin="label:clientCardinality:design:link:::ieje0rihxfa8mg-lrs2u2:8bho0jihxf8azuujjqzy">
-					<property name="bounds" value="163,171,10,19"/>
+					<property name="bounds" value="153,171,10,19"/>
 				</reference>
 				<reference referencedUin="label:supplierCardinality:design:link:::ieje0rihxfa8mg-lrs2u2:8bho0jihxf8azuujjqzy">
 					<property name="bounds" value="220,171,10,19"/>
@@ -73,7 +73,7 @@
 				<property name="targetAnchor" value="267,261"/>
 				<property name="bendpoints" value=""/>
 				<reference referencedUin="label:clientCardinality:design:link:::ieje0rihxf8yudiv1vpu:8bho0jihxf8azuujjqzy">
-					<property name="bounds" value="152,181,10,19"/>
+					<property name="bounds" value="170,190,10,19"/>
 				</reference>
 				<reference referencedUin="label:supplierCardinality:design:link:::ieje0rihxf8yudiv1vpu:8bho0jihxf8azuujjqzy">
 					<property name="bounds" value="257,235,10,19"/>

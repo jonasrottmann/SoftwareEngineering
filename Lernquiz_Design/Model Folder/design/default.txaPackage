@@ -454,6 +454,44 @@
 			<property name="call_cachedSequenceNumber" value="1"/>
 		</node>
 	</node>
+	<node uin="o0i8thii7bh79h-9morw9">
+		<property name="$metaclass" value="SD20_Interaction"/>
+		<property name="$name" value="Zug spielen"/>
+		<node uin="5rff1lii7bh79hmi4yjm">
+			<property name="$metaclass" value="SD20_Lifeline"/>
+			<property name="$name" value="Lifeline2"/>
+			<node uin="c6gdmsii7bh79i5hvif6">
+				<property name="$metaclass" value="SD20_ExecutionSpecification"/>
+				<property name="$name" value="SD20_ExecutionSpecification1"/>
+			</node>
+		</node>
+		<node uin="10borsii7bh79i7pcovx">
+			<property name="$metaclass" value="SD20_Lifeline"/>
+			<property name="$name" value="Lifeline1"/>
+			<node uin="fiw9hoii7bh79igcebzf">
+				<property name="$metaclass" value="SD20_ExecutionSpecification"/>
+				<property name="$name" value="SD20_ExecutionSpecification1"/>
+				<node uin="rnxbvii7bh79iha4mcl">
+					<property name="$metaclass" value="SD20_Int_InvocationSpecification"/>
+					<property name="$name" value="SD20_Int_InvocationSpecification1"/>
+					<property name="receiveExecutionSpecificationPuin" value="design:node:::c6gdmsii7bh79i5hvif6:5rff1lii7bh79hmi4yjm:o0i8thii7bh79h-9morw9"/>
+					<property name="call_cachedSequenceNumber" value="1.1"/>
+				</node>
+			</node>
+			<link uin="ijhg8ii7bh79i3n25sl">
+				<property name="$metaclass" value="SD20_Int_CommunicationLink"/>
+				<participant referencedUin="design:node:::10borsii7bh79i7pcovx:o0i8thii7bh79h-9morw9" role="Client"></participant>
+				<participant referencedUin="design:node:::5rff1lii7bh79hmi4yjm:o0i8thii7bh79h-9morw9" role="Supplier"></participant>
+			</link>
+		</node>
+		<node uin="62d871ii7bh79ijt8wy5">
+			<property name="$metaclass" value="SD20_Int_InvocationSpecification"/>
+			<property name="$name" value="SD20_Int_InvocationSpecification1"/>
+			<property name="receiveExecutionSpecificationPuin" value="design:node:::fiw9hoii7bh79igcebzf:10borsii7bh79i7pcovx:o0i8thii7bh79h-9morw9"/>
+			<property name="call_cachedSequenceNumber" value="1"/>
+			<property name="signalOrOperationName" value="wissensstreiterBewegen(Wissensstreiter wissensstreiter)"/>
+		</node>
+	</node>
 	<node uin="-yrgd8eihxvpbqi6abino">
 		<property name="$metaclass" value="SD20_Interaction"/>
 		<property name="$name" value="Wissen testen"/>
@@ -507,12 +545,21 @@
 						<participant referencedUin="design:node:::7x5rzxihxwghp83tydbn:7x5rzxihxwghp3mri7dj:-y8nsowihxvqqqgo592pm:-yrgd8eihxvpbqi6abino" role="Client"></participant>
 						<participant referencedUin="design:node:::-yp8yhihxwg1n4-hlrbpt:7chx8lihxwg1mz-bydwv0:-yrgd8eihxvpbqi6abino" role="Supplier"></participant>
 					</link>
+					<node uin="c87hzvii7firxx2n6fvq">
+						<property name="$metaclass" value="SD20_ExecutionSpecification"/>
+						<property name="$name" value="SD20_ExecutionSpecification2"/>
+					</node>
 					<node uin="c87hzvihxwghpc8rwcmv">
 						<property name="$metaclass" value="SD20_ExecutionSpecification"/>
 						<property name="$name" value="SD20_ExecutionSpecification1"/>
 					</node>
 				</node>
 			</node>
+			<link uin="ieje0rii7cqpnf-vec426">
+				<property name="$metaclass" value="SD20_Lifeline_LinkToConnectableElement"/>
+				<participant referencedUin="design:node:::-y8nsowihxvqqqgo592pm:-yrgd8eihxvpbqi6abino" role="Client"></participant>
+				<participant referencedUin="jdt:e_class:src:application.applicationLayer.LernQuiz" role="Supplier"></participant>
+			</link>
 		</node>
 		<node uin="-y8nsowihxvqoaj-4jt3cn">
 			<property name="$metaclass" value="SD20_Lifeline"/>
@@ -526,14 +573,22 @@
 					<property name="$name" value="SD20_Int_InvocationSpecification1"/>
 					<property name="receiveExecutionSpecificationPuin" value="design:node:::4z0dayihxvyaat-rz7d0q:-y8nsowihxvqqqgo592pm:-yrgd8eihxvpbqi6abino"/>
 					<property name="call_cachedSequenceNumber" value="1.1"/>
-					<property name="signalOrOperationName" value="kategorieSetzen(Kategorie kategorie)"/>
+					<link uin="ieje0rii7cst5docbehk">
+						<property name="$metaclass" value="SD20_Message_LinkToSignatureNamedElement"/>
+						<participant referencedUin="design:node:::sdaek7ihxvyaad-z43cj0:c87hzvihxvr66q-1tpbjs:-y8nsowihxvqoaj-4jt3cn:-yrgd8eihxvpbqi6abino" role="Client"></participant>
+						<participant referencedUin="jdt:e_method:src:application.applicationLayer.LernQuiz.kategorieSetzen:kategorieSetzen~QKategorie;" role="Supplier"></participant>
+					</link>
 				</node>
 				<node uin="l2gqtvihxw2x5ukg6xyg">
 					<property name="$metaclass" value="SD20_Int_InvocationSpecification"/>
 					<property name="$name" value="SD20_Int_InvocationSpecification2"/>
 					<property name="receiveExecutionSpecificationPuin" value="design:node:::c87hzvihxw2x5v-i5qcbo:-y8nsowihxvqqqgo592pm:-yrgd8eihxvpbqi6abino"/>
 					<property name="call_cachedSequenceNumber" value="1.2"/>
-					<property name="signalOrOperationName" value="antwortPrüfen(int antwortNummer)"/>
+					<link uin="ieje0rii7eozjl-w8dj5v">
+						<property name="$metaclass" value="SD20_Message_LinkToSignatureNamedElement"/>
+						<participant referencedUin="design:node:::l2gqtvihxw2x5ukg6xyg:c87hzvihxvr66q-1tpbjs:-y8nsowihxvqoaj-4jt3cn:-yrgd8eihxvpbqi6abino" role="Client"></participant>
+						<participant referencedUin="jdt:e_method:src:application.applicationLayer.LernQuiz.antwortPruefen:antwortPruefen~I" role="Supplier"></participant>
+					</link>
 				</node>
 				<node uin="7x5rzxihxwcgqschmxrg">
 					<property name="$metaclass" value="SD20_Int_MountingRegion"/>
@@ -565,7 +620,11 @@
 							<property name="$name" value="SD20_Int_InvocationSpecification1"/>
 							<property name="receiveExecutionSpecificationPuin" value="design:node:::c87hzvihxwdwarqae31h:7x5rzxihxwdwan-hg8zqa:7x5rzxihxwdwai3fshh6:-y8nsowihxvqqqgo592pm:-yrgd8eihxvpbqi6abino"/>
 							<property name="call_cachedSequenceNumber" value="1.3"/>
-							<property name="signalOrOperationName" value="wissensstandszeigerErhöhen(Kategorie kategorie)"/>
+							<link uin="ieje0rii7eqj1vggrk3v">
+								<property name="$metaclass" value="SD20_Message_LinkToSignatureNamedElement"/>
+								<participant referencedUin="design:node:::l2gqtvihxwdwagoan24:7x5rzxihxwcgr5ludept:7x5rzxihxwcgqschmxrg:c87hzvihxvr66q-1tpbjs:-y8nsowihxvqoaj-4jt3cn:-yrgd8eihxvpbqi6abino" role="Client"></participant>
+								<participant referencedUin="jdt:e_method:src:application.applicationLayer.LernQuiz.wissensstandszeigerErhoehen:wissensstandszeigerErhoehen~QKategorie;" role="Supplier"></participant>
+							</link>
 						</node>
 						<link uin="ieje0rihxwcgr5-i0bpy9">
 							<property name="$metaclass" value="SD20_Int_MountingLink"/>
@@ -599,12 +658,23 @@
 								</node>
 							</node>
 						</node>
+						<node uin="l2gqtvii7firxvhfuckw">
+							<property name="$metaclass" value="SD20_Int_InvocationSpecification"/>
+							<property name="$name" value="SD20_Int_InvocationSpecification2"/>
+							<property name="receiveExecutionSpecificationPuin" value="design:node:::c87hzvii7firxx2n6fvq:7x5rzxihxwghp83tydbn:7x5rzxihxwghp3mri7dj:-y8nsowihxvqqqgo592pm:-yrgd8eihxvpbqi6abino"/>
+							<property name="call_cachedSequenceNumber" value="1.4"/>
+							<link uin="ieje0rii7fmffqudtw88">
+								<property name="$metaclass" value="SD20_Message_LinkToSignatureNamedElement"/>
+								<participant referencedUin="design:node:::l2gqtvii7firxvhfuckw:7x5rzxihxwg1n5-8e1nm7:7x5rzxihxwg1n1xha2xf:c87hzvihxvr66q-1tpbjs:-y8nsowihxvqoaj-4jt3cn:-yrgd8eihxvpbqi6abino" role="Client"></participant>
+								<participant referencedUin="jdt:e_method:src:application.applicationLayer.LernQuiz.selbstTesten:selbstTesten~Z" role="Supplier"></participant>
+							</link>
+						</node>
 						<node uin="l2gqtvihxwghp01amzm0">
 							<property name="$metaclass" value="SD20_Int_InvocationSpecification"/>
 							<property name="$name" value="SD20_Int_InvocationSpecification1"/>
 							<property name="receiveExecutionSpecificationPuin" value="design:node:::c87hzvihxwghpc8rwcmv:7x5rzxihxwghp83tydbn:7x5rzxihxwghp3mri7dj:-y8nsowihxvqqqgo592pm:-yrgd8eihxvpbqi6abino"/>
-							<property name="call_cachedSequenceNumber" value="1.4"/>
 							<property name="signalOrOperationName" value="antwortPrüfen(int antwortNummer)"/>
+							<property name="call_cachedSequenceNumber" value="1.5"/>
 						</node>
 						<link uin="ieje0rihxwg1n6fv6e7l">
 							<property name="$metaclass" value="SD20_Int_MountingLink"/>
