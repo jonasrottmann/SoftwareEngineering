@@ -161,7 +161,7 @@
 					<property name="bounds" value="124,361,60,30"/>
 					<property name="location_set_by_user" value="true"/>
 					<reference referencedUin="label:$nameInplace:design:node:::l7v8cihxg62k1-y332w6:-46k66rihxfk9xapcwq9f">
-						<property name="bounds" value="13,-20,92,15"/>
+						<property name="bounds" value="33,-20,92,15"/>
 						<property name="location_set_by_user" value="true"/>
 					</reference>
 					<reference referencedUin="design:link:::ieje0rihxh62lc-q65ek:l7v8cihxg62k1-y332w6:-46k66rihxfk9xapcwq9f">
