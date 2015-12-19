@@ -30,6 +30,10 @@
 		<reference referencedUin="jdt:e_class:src:application.applicationLayer.Spieler">
 			<property name="bounds" value="114,104,200,80"/>
 			<property name="location_set_by_user" value="true"/>
+			<reference referencedUin="jdt:l_ast:src:application.applicationLayer.Spieler:wissensstandsZeiger">
+				<property name="sourceAnchor" value="319,144"/>
+				<property name="targetAnchor" value="397,144"/>
+			</reference>
 		</reference>
 		<reference referencedUin="jdt:e_class:src:application.applicationLayer.Wissensstandszeiger">
 			<property name="bounds" value="392,95,142,80"/>
