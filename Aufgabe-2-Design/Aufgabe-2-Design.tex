@@ -32,7 +32,7 @@
 
 \chapter{Design}
 
-\section{Use-Cases}
+\section{Aufbereitung der Analyse und Systemoperationen}
 \textit{Beschreiben Sie die zu realisierenden Use Cases in Form von System-Use-Cases.
 \begin{itemize}
     \item Use-Case-Beschreibung
@@ -93,14 +93,65 @@ Orientieren Sie sich hierzu an Ihren Analyseergebnissen und berücksichtigen Si
     \end{description
 \end{description}
 
-
-
-
-
 \subsection{Use-Case-Diagramm}
 
 
-\subsection{Aktivitäts-Diagramm}
+\subsection{Aktivitäts-Diagramme}
+
+
+\subsection{System-Sequenz-Diagramme}
+
+
+\subsection{System-Operationen}
+\subsubsection{Zug spielen}
+\paragraph{wissensstreiterBewegen (Wissensstreiter wissensstreiter)}
+\begin{description}
+	\item[Verantwortlichkeit] Das aktuelle Feld des vom Controller entgegengenommenen Wissensstreiters wird um die zuvor gespeicherte Augenzahl inkrementiert. Das aktuelle Feld des geschlagenen Spielers wird auf sein Heimatfeld gesetzt. Anschließend wird überprüft, ob das neue Feld leer oder belegt ist.
+	\item[Bemerkungen] Gewählter Wissensstreiter wird bewegt.
+	\item[Ausnahmen] keine
+	\item[Vorbedingung] Spiel ist initialisiert, eine Augenzahl wurde automatisch am Anfang des Zuges generiert und ein Spieler hat eine Eingabe gemacht, welchen Wissensstreiter bewegt werden soll.
+	\item[Nachbedingung] Wenn das neue Feld (altes Feld + Augenzahl) leer ist, ist der nächste Spieler am Zug. Wenn nicht, tritt der Use Case „Wissen testen“ ein.
+\end{description}
+
+\subsubsection{Wissen testen}
+\paragraph{kategorieSetzen (Kategorie kategorie)}
+\begin{description}
+	\item[Verantwortlichkeit] Die vom Controller entgegen genommene Kategorie wird gesetzt, um daraus die folgende Frage zu entnehmen.
+	\item[Bemerkungen]  Kategorie wird für Fragerunde gesetzt.
+	\item[Ausnahmen] keine
+	\item[Vorbedingung] Wissensstreiter wurde auf Feld gezogen, auf dem schon ein Wissensstreiter steht.
+	\item[Nachbedingung] Antwort muss gewählt werden.
+\end{description}
+
+\paragraph{antwortPrüfen(int antwortNummer)}
+\begin{description}
+	\item[Verantwortlichkeit] Die vom Controller entgegen genommene Antwortnummer wird mit der Antwortnummer der richtigen Antwort der Frage verglichen.
+	\item[Bemerkungen] Antwort wird überprüft.
+	\item[Ausnahmen] keine
+	\item[Vorbedingung] Eine Kategorie wurde gesetzt.
+	\item[Nachbedingung] Wenn die Antwort richtig ist, wird der Wissensstandszeiger des Spielers in dieser Kategorie inkrementiert. Wenn der Wissensstandszeiger bereits den Maximalwert 3 hat, wird nochmals eine Kategorie entgegen genommen, um den Wissensstandszeiger stattdessen in dieser kategorie zu erhöhen.\newline
+	Wenn die Antwort falsch ist, wird der Wissensstandszeiger dekrementiert. Wenn der befragte Spieler darüber hinaus ungleich dem fragenden Spieler ist, wird die Funktion frageBeantworten(antwortNummer) erneut für den fragenden Spieler aufgerufen.
+\end{description}
+
+\paragraph{wissensstandszeigerErhöhen(Kategorie kategorie)}
+\begin{description}
+	\item[Verantwortlichkeit] Der Controller nimmt eine Kategorie entgegen, in der für den aktuellen Spieler die Wissensstandszeiger-Variable inkrementiert werden soll.
+	\item[Bemerkungen] keine
+	\item[Ausnahmen] keine
+	\item[Vorbedingung] Prüfen der Antwort lieferte true und die Wissensstandszeiger-Variable für die aktuelle Kategorie des aktuellen Spielers steht auf dem Max-Wert 3.
+	\item[Nachbedingung] Nächster Spieler ist an der Reihe.
+\end{description}
+
+
+
+\section{Zustandsautomat}
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{Diagramme/Zustandsautomat.jpg}
+	\centering
+\end{figure}
+
+\section{Detailed Design und das Objektmodell}
+
 
 
 \end{document}
