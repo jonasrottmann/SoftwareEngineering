@@ -19,16 +19,23 @@
 			<property name="bounds" value="195,5,159,152"/>
 			<property name="location_set_by_user" value="true"/>
 		</reference>
-		<reference referencedUin="jdt:e_class:src:application.applicationLayer.LernQuiz">
-			<property name="bounds" value="35,195,200,106"/>
-			<property name="location_set_by_user" value="true"/>
-		</reference>
 		<reference referencedUin="jdt:e_class:src:application.applicationLayer.Kategorie">
-			<property name="bounds" value="395,-4,83,80"/>
+			<property name="bounds" value="395,-4,158,92"/>
 			<property name="location_set_by_user" value="true"/>
+			<property name="collapsedCompartments" value=""/>
+			<reference referencedUin="jdt:l_ast:src:application.applicationLayer.Kategorie:fragen">
+				<property name="sourceAnchor" value="400,41"/>
+				<property name="targetAnchor" value="339,41"/>
+				<reference referencedUin="label:supplierCardinality:jdt:l_ast:src:application.applicationLayer.Kategorie:fragen">
+					<property name="bounds" value="349,-11,21,19"/>
+				</reference>
+				<reference referencedUin="label:clientCardinality:jdt:l_ast:src:application.applicationLayer.Kategorie:fragen">
+					<property name="bounds" value="380,19,10,19"/>
+				</reference>
+			</reference>
 		</reference>
 		<reference referencedUin="jdt:e_class:src:application.applicationLayer.Spieler">
-			<property name="bounds" value="114,104,200,80"/>
+			<property name="bounds" value="114,104,200,122"/>
 			<property name="location_set_by_user" value="true"/>
 			<reference referencedUin="jdt:l_ast:src:application.applicationLayer.Spieler:wissensstandsZeiger">
 				<property name="sourceAnchor" value="319,144"/>
@@ -36,7 +43,28 @@
 			</reference>
 		</reference>
 		<reference referencedUin="jdt:e_class:src:application.applicationLayer.Wissensstandszeiger">
-			<property name="bounds" value="392,95,142,80"/>
+			<property name="bounds" value="392,95,200,80"/>
+			<property name="location_set_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:application.applicationLayer.Frage">
+			<property name="bounds" value="134,-4,200,80"/>
+			<property name="location_set_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:application.applicationLayer.UC2">
+			<property name="bounds" value="35,195,200,106"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="collapsedCompartments" value=""/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:application.applicationLayer.Spielfeld">
+			<property name="bounds" value="25,104,200,80"/>
+			<property name="location_set_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:application.applicationLayer.Wissensstreiter">
+			<property name="bounds" value="352,95,167,80"/>
+			<property name="location_set_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:application.applicationLayer.UC1">
+			<property name="bounds" value="0,0,183,80"/>
 			<property name="location_set_by_user" value="true"/>
 		</reference>
 	</view>

@@ -7,6 +7,17 @@
 		<property name="$referencedInteractionUin" value="design:node:::-yrgd8eigw28ibs9wdcka"/>
 		<property name="__options" value="option.nlayout.recursive=true"/>
 		<property name="$name" value="Sequence Diagram - Zug spielen"/>
+		<node uin="156bx8iihd2841-sjqbhj">
+			<property name="$metaclass" value="Guide"/>
+			<property name="$name" value="Guide1"/>
+			<property name="position" value="28"/>
+			<property name="horizontal" value="false"/>
+			<node uin="-j1khk1iihdi4vp-gnxysz">
+				<property name="$metaclass" value="GuideAttachment"/>
+				<property name="$name" value="GuideAttachment1"/>
+				<property name="alignment" value="-1"/>
+			</node>
+		</node>
 		<reference referencedUin="design:node:::-yrgd8eigw28ibs9wdcka">
 			<property name="$shortcutReference" value="true"/>
 			<property name="bounds" value="5,5,471,340"/>
@@ -49,16 +60,21 @@
 			</reference>
 		</reference>
 		<reference referencedUin="design:node:::-yrgd8eihxv4pnkajvmad">
-			<property name="bounds" value="75,35,581,337"/>
+			<property name="bounds" value="23,15,498,337"/>
 			<property name="location_set_by_user" value="true"/>
 			<property name="$shortcutReference" value="true"/>
 			<property name="bounds_setted_by_user" value="true"/>
+			<property name="attachmentUins" value="design:node:::-j1khk1iihdi4vp-gnxysz:156bx8iihd2841-sjqbhj:Vam8ynkigw28ib0-wcrm0s"/>
 			<reference referencedUin="design:node:::l2gqtvihxvjznd-v5in6r:-yrgd8eihxv4pnkajvmad">
 				<property name="bounds" value="8,90,16,16"/>
 				<reference referencedUin="sd20_message_container:design:node:::l2gqtvihxvjznd-v5in6r:-yrgd8eihxv4pnkajvmad">
+					<property name="bounds" value="0,0,0,0"/>
 					<reference referencedUin="sd20_message|1|call|59(design:node:::l2gqtvihxvjznd-v5in6r:-yrgd8eihxv4pnkajvmad)">
-						<property name="sourceAnchor" value="101,160"/>
-						<property name="targetAnchor" value="161,160"/>
+						<property name="sourceAnchor" value="49,140"/>
+						<property name="targetAnchor" value="109,140"/>
+						<reference referencedUin="sd20_message_label:sd20_message|1|call|59(design:node:::l2gqtvihxvjznd-v5in6r:-yrgd8eihxv4pnkajvmad)">
+							<property name="bounds" value="49,125,22,15"/>
+						</reference>
 					</reference>
 				</reference>
 			</reference>
@@ -70,16 +86,18 @@
 					<property name="location_set_by_user" value="true"/>
 					<property name="bounds_setted_by_user" value="true"/>
 					<reference referencedUin="design:node:::l2gqtvihxvk5ibp82spc:c87hzvihxvjznb-rfyyt1:-y8nsowihxv77r6iw11gr:-yrgd8eihxv4pnkajvmad">
-						<property name="bounds" value="0,26,20,35"/>
+						<property name="bounds" value="0,26,20,28"/>
 						<property name="location_set_by_user" value="true"/>
 						<property name="background_color" value="240,240,240"/>
 						<property name="bounds_setted_by_user" value="true"/>
 						<reference referencedUin="sd20_message_container:design:node:::l2gqtvihxvk5ibp82spc:c87hzvihxvjznb-rfyyt1:-y8nsowihxv77r6iw11gr:-yrgd8eihxv4pnkajvmad">
+							<property name="bounds" value="0,0,0,0"/>
 							<reference referencedUin="sd20_message|1|call|102(design:node:::l2gqtvihxvk5ibp82spc:c87hzvihxvjznb-rfyyt1:-y8nsowihxv77r6iw11gr:-yrgd8eihxv4pnkajvmad)">
-								<property name="sourceAnchor" value="181,186"/>
-								<property name="targetAnchor" value="561,186"/>
+								<property name="sourceAnchor" value="129,166"/>
+								<property name="targetAnchor" value="398,166"/>
 								<property name="location_set_by_user" value="true"/>
 								<reference referencedUin="sd20_message_label:sd20_message|1|call|102(design:node:::l2gqtvihxvk5ibp82spc:c87hzvihxvjznb-rfyyt1:-y8nsowihxv77r6iw11gr:-yrgd8eihxv4pnkajvmad)">
+									<property name="bounds" value="129,151,234,15"/>
 								</reference>
 							</reference>
 						</reference>
@@ -87,10 +105,10 @@
 				</reference>
 			</reference>
 			<reference referencedUin="design:node:::-y8nsowihxv7hqb7jy3ha:-yrgd8eihxv4pnkajvmad">
-				<property name="bounds" value="455,5,62,300"/>
+				<property name="bounds" value="307,5,136,300"/>
 				<property name="location_set_by_user" value="true"/>
 				<reference referencedUin="design:node:::c87hzvihxvk5ie-7cjmjc:-y8nsowihxv7hqb7jy3ha:-yrgd8eihxv4pnkajvmad">
-					<property name="bounds" value="21,59,20,35"/>
+					<property name="bounds" value="58,59,20,28"/>
 					<property name="location_set_by_user" value="true"/>
 				</reference>
 			</reference>
