@@ -3,12 +3,14 @@ package application.presentationLayer;
 import java.util.Observable;
 import java.util.Observer;
 
-import application.applicationLayer.LQModelFront;
+import application.applicationLayer.ModelFront;
 
-public class LQController implements Observer {
+public class Controller implements Observer {
 	
-	LQModelFront modelFront;
-	LQView view;
+	ModelFront modelFront;
+	View view;
+	
+	
 	
 	public void handleEvent(){
 		

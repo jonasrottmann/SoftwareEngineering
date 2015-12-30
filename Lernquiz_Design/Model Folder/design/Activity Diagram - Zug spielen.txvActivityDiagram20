@@ -189,7 +189,7 @@
 					<property name="bounds_setted_by_user" value="true"/>
 					<reference referencedUin="design:link:::ieje0rihxgn95p-re81t0:-qbjze4ihxgl9ys-ytm88h:-46k66rihxfk9xapcwq9f">
 						<property name="sourceAnchor" value="372,920"/>
-						<property name="targetAnchor" value="404,1000"/>
+						<property name="targetAnchor" value="473,967"/>
 						<property name="bendpoints" value=""/>
 					</reference>
 				</reference>
@@ -209,6 +209,20 @@
 					<reference referencedUin="design:link:::ieje0rihxgrkr2-9zsd4s:-qbjze4ihxgq40y-54jad6:-46k66rihxfk9xapcwq9f">
 						<property name="sourceAnchor" value="338,1130"/>
 						<property name="targetAnchor" value="516,1246"/>
+						<property name="bendpoints" value=""/>
+					</reference>
+				</reference>
+				<reference referencedUin="design:node:::sbhn20iiq5uj7b-i66hzo:-46k66rihxfk9xapcwq9f">
+					<property name="bounds" value="197,901,60,30"/>
+					<property name="location_set_by_user" value="true"/>
+					<reference referencedUin="label:$nameInplace:design:node:::sbhn20iiq5uj7b-i66hzo:-46k66rihxfk9xapcwq9f">
+						<property name="bounds" value="59,-260,104,21"/>
+						<property name="location_set_by_user" value="true"/>
+						<property name="bounds_setted_by_user" value="true"/>
+					</reference>
+					<reference referencedUin="design:link:::ieje0riiq5uuh0-bdtpci:sbhn20iiq5uj7b-i66hzo:-46k66rihxfk9xapcwq9f">
+						<property name="sourceAnchor" value="474,982"/>
+						<property name="targetAnchor" value="424,1007"/>
 						<property name="bendpoints" value=""/>
 					</reference>
 				</reference>
@@ -257,18 +271,9 @@
 						<property name="targetAnchor" value="369,320"/>
 						<property name="bendpoints" value=""/>
 					</reference>
-				</reference>
-				<reference referencedUin="design:node:::-qbjze4ihxfx87ympi91f:-46k66rihxfk9xapcwq9f">
-					<property name="bounds" value="74,261,159,30"/>
-					<property name="location_set_by_user" value="true"/>
-					<reference referencedUin="design:link:::ieje0rihxhwo3gqlpscx:-qbjze4ihxfx87ympi91f:-46k66rihxfk9xapcwq9f">
-						<property name="sourceAnchor" value="372,350"/>
-						<property name="targetAnchor" value="372,405"/>
-						<property name="bendpoints" value=""/>
-					</reference>
-					<reference referencedUin="design:link:::ieje0rihxhz4976fu7r8:-qbjze4ihxfx87ympi91f:-46k66rihxfk9xapcwq9f">
-						<property name="sourceAnchor" value="412,350"/>
-						<property name="targetAnchor" value="412,421"/>
+					<reference referencedUin="design:link:::ieje0riiq5q0zb-ysisrq:-qbjze4ihxftm9vpgdii6:-46k66rihxfk9xapcwq9f">
+						<property name="sourceAnchor" value="416,301"/>
+						<property name="targetAnchor" value="416,420"/>
 						<property name="bendpoints" value=""/>
 					</reference>
 				</reference>
@@ -287,8 +292,15 @@
 				<reference referencedUin="design:node:::l7v8cihxgxnsrmnske1:-46k66rihxfk9xapcwq9f">
 					<property name="bounds" value="37,541,60,30"/>
 					<property name="location_set_by_user" value="true"/>
+					<reference referencedUin="design:link:::ieje0riiq5uzox-kigwoy:l7v8cihxgxnsrmnske1:-46k66rihxfk9xapcwq9f">
+						<property name="sourceAnchor" value="344,622"/>
+						<property name="targetAnchor" value="519,975"/>
+						<property name="bendpoints" value="660,780,660,975"/>
+						<property name="smooth_bendpoints" value="660,780,660,975"/>
+						<property name="location_set_by_user" value="true"/>
+					</reference>
 					<reference referencedUin="label:$nameInplace:design:node:::l7v8cihxgxnsrmnske1:-46k66rihxfk9xapcwq9f">
-						<property name="bounds" value="-20,40,151,41"/>
+						<property name="bounds" value="0,-40,151,41"/>
 						<property name="bounds_setted_by_user" value="true"/>
 						<property name="location_set_by_user" value="true"/>
 					</reference>

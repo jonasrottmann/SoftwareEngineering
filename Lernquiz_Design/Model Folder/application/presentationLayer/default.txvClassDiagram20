@@ -6,21 +6,21 @@
 		<property name="$defaultDiagram" value="true"/>
 		<property name="$metaclass" value="ClassDiagram20"/>
 		<property name="__options" value="option.nlayout.recursive=true"/>
-		<reference referencedUin="jdt:e_class:src:application.presentationLayer.LQView">
-			<property name="bounds" value="5,5,147,152"/>
+		<reference referencedUin="jdt:e_class:src:application.presentationLayer.Controller">
+			<property name="bounds" value="195,35,152,137"/>
 			<property name="location_set_by_user" value="true"/>
-			<property name="collapsedCompartments" value=""/>
-			<reference referencedUin="jdt:l_ast:src:application.presentationLayer.LQView:controller">
-				<property name="sourceAnchor" value="157,101"/>
-				<property name="targetAnchor" value="200,101"/>
+			<reference referencedUin="jdt:l_ast:src:application.presentationLayer.Controller:view">
+				<property name="sourceAnchor" value="200,93"/>
+				<property name="targetAnchor" value="142,93"/>
 			</reference>
 		</reference>
-		<reference referencedUin="jdt:e_class:src:application.presentationLayer.LQController">
-			<property name="bounds" value="195,35,167,137"/>
+		<reference referencedUin="jdt:e_class:src:application.presentationLayer.View">
+			<property name="bounds" value="5,5,132,152"/>
 			<property name="location_set_by_user" value="true"/>
-			<reference referencedUin="jdt:l_ast:src:application.presentationLayer.LQController:view">
-				<property name="sourceAnchor" value="200,93"/>
-				<property name="targetAnchor" value="157,93"/>
+			<property name="collapsedCompartments" value=""/>
+			<reference referencedUin="jdt:l_ast:src:application.presentationLayer.View:controller">
+				<property name="sourceAnchor" value="142,101"/>
+				<property name="targetAnchor" value="200,101"/>
 			</reference>
 		</reference>
 	</view>

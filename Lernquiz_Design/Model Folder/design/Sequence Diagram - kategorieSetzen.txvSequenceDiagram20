@@ -15,7 +15,7 @@
 				<property name="bounds" value="297,5,92,300"/>
 				<property name="location_set_by_user" value="true"/>
 				<reference referencedUin="design:node:::c87hzviiha1ejpeuv3vz:-y8nsowiih9zzjl68g2p7:-yrgd8eiih9wcjk-wkpcuz">
-					<property name="bounds" value="22,68,20,24"/>
+					<property name="bounds" value="36,68,20,24"/>
 					<property name="location_set_by_user" value="true"/>
 				</reference>
 			</reference>
@@ -31,7 +31,7 @@
 						<reference referencedUin="sd20_message_container:design:node:::l2gqtviih9ybtq-5q0t7:c87hzviih9wcko-4m464b:-y8nsowiih9wck9twap7t:-yrgd8eiih9wcjk-wkpcuz">
 							<reference referencedUin="sd20_message|1|call|103(design:node:::l2gqtviih9ybtq-5q0t7:c87hzviih9wcko-4m464b:-y8nsowiih9wck9twap7t:-yrgd8eiih9wcjk-wkpcuz)">
 								<property name="sourceAnchor" value="80,139"/>
-								<property name="targetAnchor" value="205,139"/>
+								<property name="targetAnchor" value="226,139"/>
 								<property name="location_set_by_user" value="true"/>
 							</reference>
 						</reference>
@@ -42,7 +42,7 @@
 				<property name="bounds" value="165,5,112,300"/>
 				<property name="location_set_by_user" value="true"/>
 				<reference referencedUin="design:node:::c87hzviih9ybtt-ilblu:-y8nsowiih9xce47ncyz1:-yrgd8eiih9wcjk-wkpcuz">
-					<property name="bounds" value="25,42,20,66"/>
+					<property name="bounds" value="46,42,20,66"/>
 					<property name="location_set_by_user" value="true"/>
 					<reference referencedUin="design:node:::l2gqtviiha1ejlixfsbx:c87hzviih9ybtt-ilblu:-y8nsowiih9xce47ncyz1:-yrgd8eiih9wcjk-wkpcuz">
 						<property name="bounds" value="0,26,20,24"/>
@@ -50,8 +50,8 @@
 						<property name="background_color" value="240,240,240"/>
 						<reference referencedUin="sd20_message_container:design:node:::l2gqtviiha1ejlixfsbx:c87hzviih9ybtt-ilblu:-y8nsowiih9xce47ncyz1:-yrgd8eiih9wcjk-wkpcuz">
 							<reference referencedUin="sd20_message|1|call|102(design:node:::l2gqtviiha1ejlixfsbx:c87hzviih9ybtt-ilblu:-y8nsowiih9xce47ncyz1:-yrgd8eiih9wcjk-wkpcuz)">
-								<property name="sourceAnchor" value="225,165"/>
-								<property name="targetAnchor" value="292,165"/>
+								<property name="sourceAnchor" value="246,165"/>
+								<property name="targetAnchor" value="348,165"/>
 								<property name="location_set_by_user" value="true"/>
 							</reference>
 						</reference>

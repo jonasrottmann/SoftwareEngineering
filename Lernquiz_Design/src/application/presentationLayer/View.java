@@ -3,12 +3,12 @@ package application.presentationLayer;
 import java.util.Observable;
 import java.util.Observer;
 
-import application.applicationLayer.LQModelFront;
+import application.applicationLayer.ModelFront;
 
-public class LQView implements Observer {
+public class View implements Observer {
 	
-	LQModelFront model;
-	LQController controller;
+	ModelFront model;
+	Controller controller;
 
 	
 	public void update(Observable arg0, Object arg1) {

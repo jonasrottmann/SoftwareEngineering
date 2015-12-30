@@ -1,9 +1,10 @@
 package application.applicationLayer;
 
 public class Wissensstandszeiger {
+	
+	int[] zeiger = new int[4];
 
-	public void getWissensstandVonKategorie(Kategorie parameter0) {
-		return;
+	public int getWissensstandVonKategorie(int index) {
+		return zeiger[index];
 	}
-
 }

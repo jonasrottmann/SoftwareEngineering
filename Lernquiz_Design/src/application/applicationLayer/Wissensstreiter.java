@@ -1,9 +1,17 @@
 package application.applicationLayer;
 public class Wissensstreiter {
+	
+	private int position;
 
-	public boolean positionAendern(int neuePos) {
-		//Commented automatically
-		//return;
-		return false;
+	
+
+	public int getPosition() {
+		return position;
 	}
+
+	public void setPosition(int position) {
+		this.position = position;
+	}
+	
+	
 }

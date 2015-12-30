@@ -1,6 +1,11 @@
 package application.applicationLayer;
 
-public class UC2 {
+public class UseCaseController2 {
+	
+	private int aktuelleKategorie;
+	private Frage aktuelleFrage;
+	private Spieler testenderSpieler;
+	private Spieler getesteterSpieler;
 
 	public void selbstTesten(boolean selbstTesten) {
 		return;
@@ -11,6 +16,9 @@ public class UC2 {
 	}
 
 	public void antwortPruefen(int antwortNummer) {
+		if(antwortNummer == aktuelleFrage.getRichtigeAntwortNummer()){
+			int wissensstandszeiger = getesteterSpieler.getWissensstandszeiger().getWissensstandVonKategorie(aktuelleKategorie);
+		}
 		return;
 	}
 
