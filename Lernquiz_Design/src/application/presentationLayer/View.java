@@ -19,7 +19,7 @@ public class View implements Observer {
 		
 		switch(model.getZustand()) {
 			case NeuerSpielzug:
-				System.out.println(String.format("\n\nSpieler %d ist jetzt am Zug. Viel Glück!", model.getUseCaseController1().getAktuellerSpieler()));
+				System.out.println(String.format("\n\n%s ist jetzt am Zug. Viel Glück!", model.getUseCaseController1().getAktuellerSpieler().getName()));
 				break;
 			case NeuerSpielzug_FAIL:
 				for (int i : model.getUseCaseController1().getWürfelErgebnisse()) {
@@ -30,10 +30,22 @@ public class View implements Observer {
 				for (int i : model.getUseCaseController1().getWürfelErgebnisse()) {
 					System.out.println(String.format("Du hast eine %d gewürfelt.", i));
 				}
-				printWissensstreiterPositionen();
+				printEigeneWissensstreiter();
+				printFremdeWissensstreiter();
+				break;
+			case WarteAufWissensstreiterEingabe:
+				System.out.println(String.format("Du hast eine %d gewürfelt", model.getUseCaseController1().getWürfelErgebnisse().get(model.getUseCaseController1().getWürfelErgebnisse().size() - 1)));
+				printEigeneWissensstreiter();
+				printFremdeWissensstreiter();
+				System.out.println("Welcher Wissensstreiter soll bewegt werden?");
 				break;
 			case WarteAufAntwortEingabe:
-				System.out.println("Warte auf Eingabe");
+				// P0 kollidiert mit H2
+				// Peter testet Hans
+				// Frage
+				// Antwort 1	Antwort 2
+				// Antwort 3	Antwort 4
+				System.out.println("Wähle die richtige Antwort aus.");
 				break;
 			case WarteAufKategorieEingabe:
 				System.out.println("Warte auf Eingabe");
@@ -41,28 +53,44 @@ public class View implements Observer {
 			case WarteAufSelbsttestEingabe:
 				System.out.println("Warte auf Eingabe");
 				break;
-			case WarteAufWissensstreiterEingabe:
-				System.out.println("Warte auf Eingabe");
-				break;
+			
 		}
 	}
 	
 	
 	
-	
-	private void printWissensstreiterPositionen() {
-		int aktuellerSpielerIndex =  model.getUseCaseController1().getAktuellerSpieler();
-		Spieler aktuellerSpieler = Spielfeld.getInstance().spieler.get(aktuellerSpielerIndex);
+	private void printEigeneWissensstreiter() {
+		Spieler eigenerSpieler = model.getUseCaseController1().getAktuellerSpieler();
+		int aktuellerSpielerIndex = Spielfeld.getInstance().spieler.indexOf(eigenerSpieler);
 		ArrayList<Wissensstreiter> wissensstreiterAufSpielfeld = Spielfeld.getInstance().spieler.get(aktuellerSpielerIndex).getAlleWissensstreiterAufSpielfeld();
 		
+		System.out.println(String.format("%d von 3 Wissensstreiter auf dem Spielfeld.", wissensstreiterAufSpielfeld.size()));
+		System.out.println("Die Wissensteiter stehen auf folgenden Feldern:");
+		printWissenstreiterPositionen(eigenerSpieler);
+	}
+	
+	private void printFremdeWissensstreiter() {
+		Spieler eigenerSpieler = model.getUseCaseController1().getAktuellerSpieler();
+		int eigenerSpielerIndex = Spielfeld.getInstance().spieler.indexOf(eigenerSpieler);
+		
+		for (int i = 0; i < Spielfeld.getInstance().spieler.size(); i++) {
+			if (i != eigenerSpielerIndex) {
+				printWissenstreiterPositionen(Spielfeld.getInstance().spieler.get(i));
+			}
+		}
+	}
+	
+	private void printWissenstreiterPositionen(Spieler spieler) {
+		int aktuellerSpielerIndex = Spielfeld.getInstance().spieler.indexOf(spieler);
+		ArrayList<Wissensstreiter> wissensstreiterAufSpielfeld = Spielfeld.getInstance().spieler.get(aktuellerSpielerIndex).getAlleWissensstreiterAufSpielfeld();
+
 		if (Spielfeld.getInstance().spieler.get(aktuellerSpielerIndex).alleWissensstreiterImHeimatfeld()) {
 			// ...
 		} else {
-			System.out.println(String.format("%d von 3 Wissensstreiter auf dem Spielfeld.", wissensstreiterAufSpielfeld.size()));
-			System.out.println("Deine Wissensteiter stehen auf folgenden Feldern:");
 			for (int i = 0; i < Spielfeld.getInstance().spieler.get(aktuellerSpielerIndex).getAlleWissensstreiterAufSpielfeld().size(); i++) {
-				System.out.print(String.format("%s%d auf Feld %d\t", aktuellerSpieler.getName().charAt(0), i, wissensstreiterAufSpielfeld.get(i).getPosition()));			
+				System.out.print(String.format("%s%d auf Feld %d\t", spieler.getName().charAt(0), i, wissensstreiterAufSpielfeld.get(i).getPosition()));			
 			}
+			System.out.println();
 		}
 	}
 }

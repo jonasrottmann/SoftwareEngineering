@@ -157,7 +157,7 @@
 					<link uin="ieje0riihdail2hghmkm">
 						<property name="$metaclass" value="SD20_Message_LinkToSignatureNamedElement"/>
 						<participant referencedUin="design:node:::l2gqtviihd9f569m5b7i:c87hzviihd4lkq-o8fc29:-y8nsowiihd3pe9eowr4e:-yrgd8eiihd2sre8qy5ui" role="Client"></participant>
-						<participant referencedUin="jdt:e_method:src:application.applicationLayer.Spielfeld.isFeldBesetzt:isFeldBesetzt~I" role="Supplier"></participant>
+						<participant referencedUin="jdt:e_method:src:application.applicationLayer.Spielfeld._isFeldBesetzt:_isFeldBesetzt~I" role="Supplier"></participant>
 					</link>
 				</node>
 			</node>

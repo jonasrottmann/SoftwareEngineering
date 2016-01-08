@@ -6,7 +6,7 @@ import java.util.Random;
 public class UseCaseController1 {
 	
 	private int aktuellerSpieler;
-	private Spielfeld spielfeld;
+	private Spielfeld spielfeld = Spielfeld.getInstance();
 	private ArrayList<Integer> würfelErgebnisse = new ArrayList<Integer>();
 	private ModelFront modelFront;
 
@@ -40,6 +40,7 @@ public class UseCaseController1 {
 		
 		// Spielfeld verändern
 		if(Spielfeld.getInstance().spieler.get(aktuellerSpieler).alleWissensstreiterImHeimatfeld()){
+			// Wissensstreiter aus Heimatfeld bringen
 			if (letztesWürfelErgebnis == 6) {
 				wissenstreiterAufsSpielfeldBringen();
 				modelFront.setZustand(Zustand.NeuerSpielzug_SUCCESS);
@@ -49,10 +50,10 @@ public class UseCaseController1 {
 			}
 			modelFront.notifyObservers();
 		} else {
-			// wissensstreiterBewegen
+			// Wissensstreiter ziehen
 			if (letztesWürfelErgebnis == 6 && !Spielfeld.getInstance().spieler.get(aktuellerSpieler).alleWissensstreiterAufSpielfeld()) {
 				wissenstreiterAufsSpielfeldBringen();
-				// TODO notify
+				// Problem: Wenn eigener Wissensstreiter auf dem Startfeld steht
 			} else {
 				// Bewegen
 				modelFront.setZustand(Zustand.WarteAufWissensstreiterEingabe);
@@ -63,30 +64,34 @@ public class UseCaseController1 {
 	}
 
 
-	/**
-	 * 
-	 * @param wissensstreiter
-	 */
 	public void wissensstreiterBewegen(Wissensstreiter wissensstreiter) {
 		int position = (wissensstreiter.getPosition() + würfelErgebnisse.get(würfelErgebnisse.size() - 1)) % 48;
 		Spieler spielerAufZielfeld = spielfeld.isFeldBesetzt(position);
 		wissensstreiter.setPosition(position);
 		
 		if(spielerAufZielfeld != null){
+			modelFront.getUseCaseController2().testen(ws1, ws2);
 			//wissenstestStarten
 			// TODO
+			System.out.println("WISSENSSTEST!");
 		}
 	}
 	
-	
-	/**
-	 * 
-	 */
 	private void wissenstreiterAufsSpielfeldBringen() {
-		if (Spielfeld.getInstance().isFeldBesetzt(Spielfeld.STARTFELDER[aktuellerSpieler]) != null) {
+		Spieler kollidierenderSpieler = Spielfeld.getInstance().isFeldBesetzt(Spielfeld.STARTFELDER[aktuellerSpieler]);
+		
+		if (kollidierenderSpieler != null) {
+			// TODO Checken außerhalb dieser Methode
 			// Startfeld des aktuellen Spielers ist schon besetzt.
-			// TODO wissenstest
-			System.out.println("Startfeld besetzt...");
+			if (Spielfeld.getInstance().spieler.get(aktuellerSpieler).equals(kollidierenderSpieler)) {
+				// Startfeld ist von uns selbst besetzt
+				modelFront.setZustand(Zustand.WarteAufWissensstreiterEingabe);
+				modelFront.notifyObservers();
+			} else {
+				//wissenstestStarten
+				// TODO
+				System.out.println("WISSENSSTEST!");
+			}
 		} else {
 			Spielfeld.getInstance()
 			.spieler.get(aktuellerSpieler)
@@ -99,7 +104,7 @@ public class UseCaseController1 {
 		return würfelErgebnisse;
 	}
 	
-	public int getAktuellerSpieler() {
-		return aktuellerSpieler;
+	public Spieler getAktuellerSpieler() {
+		return Spielfeld.getInstance().spieler.get(aktuellerSpieler);
 	}
 }

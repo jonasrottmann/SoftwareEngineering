@@ -6,14 +6,23 @@ public class UseCaseController2 {
 	private Frage aktuelleFrage;
 	private Spieler testenderSpieler;
 	private Spieler getesteterSpieler;
-	private ModelFront modelFront;
+	private final ModelFront modelFront;
 
 	
-	
-
 	public UseCaseController2(ModelFront modelFront) {
 		this.modelFront = modelFront;
 	}
+	
+	
+	
+	
+	public void testen(Wissensstreiter ws1, Wissensstreiter ws2) {
+		
+	}
+	
+	
+	
+	
 	
 	public void selbstTesten(boolean selbstTesten) {
 		return;
@@ -36,5 +45,4 @@ public class UseCaseController2 {
 		// Message #1.1 to b:Kategorie
 		b.getRandomFrage();
 	}
-
 }

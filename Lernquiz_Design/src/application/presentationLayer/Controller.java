@@ -4,6 +4,7 @@ import java.util.Observable;
 import java.util.Observer;
 
 import application.applicationLayer.ModelFront;
+import application.applicationLayer.Spielfeld;
 import application.applicationLayer.Terminal;
 
 public class Controller implements Observer {
@@ -49,11 +50,12 @@ public class Controller implements Observer {
 			case WarteAufSelbsttestEingabe:
 				break;
 			case WarteAufWissensstreiterEingabe:
-				s = terminal.readLine();
-				while (Integer.valueOf(s) == null ) {
+				Integer i = null;
+				while (i == null || i >= 4 || i < 0) {
 					s = terminal.readLine();
+					i = stringToInt(s);
 				}
-				// ...
+				modelFront.getUseCaseController1().wissensstreiterBewegen(modelFront.getUseCaseController1().getAktuellerSpieler().getWissensstreiter().get(i));
 				break;
 			default:
 				break;
