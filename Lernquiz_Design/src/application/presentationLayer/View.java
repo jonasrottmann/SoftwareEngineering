@@ -21,12 +21,12 @@ public class View implements Observer {
 			case NeuerSpielzug:
 				System.out.println(String.format("\n\n%s ist jetzt am Zug. Viel Glück!", model.getUseCaseController1().getAktuellerSpieler().getName()));
 				break;
-			case NeuerSpielzug_FAIL:
+			case NeuerSpielzug_WuerfelnFail:
 				for (int i : model.getUseCaseController1().getWürfelErgebnisse()) {
 					System.out.println(String.format("Du hast eine %d gewürfelt.", i));
 				}
 				break;
-			case NeuerSpielzug_SUCCESS:
+			case NeuerSpielzug_WuerfelnSuccess:
 				for (int i : model.getUseCaseController1().getWürfelErgebnisse()) {
 					System.out.println(String.format("Du hast eine %d gewürfelt.", i));
 				}
@@ -54,8 +54,18 @@ public class View implements Observer {
 				// Antwort 3	Antwort 4
 				System.out.println("Wähle die richtige Antwort aus.");
 				break;
-			
+			case NeuerSpielzug_FrageFail:
+				System.out.println("Warte auf Eingabe");
+				break;
+			case NeuerSpielzug_FrageSuccess:
+				//Glückwunsch! Deine Antwort ist richtig.
+				//Dein Wissenstreiter G1 wurde zurück in dein Heimatfeld befördert
+				// Wissensstand 1	Wissensstand 2
+				// Wissensstand 3	Wissensstand 4
+				System.out.println("Warte auf Eingabe");
+				break;
 			case WarteAufSelbsttestEingabe:
+				//Selbst testen?
 				System.out.println("Warte auf Eingabe");
 				break;
 			

@@ -22,7 +22,7 @@ public class Controller implements Observer {
 		String s;
 		Integer i;
 		switch(modelFront.getZustand()) {
-			case NeuerSpielzug_FAIL:
+			case NeuerSpielzug_WuerfelnFail:
 				try {
 					Thread.sleep(1000);
 				} catch (InterruptedException e1) {
@@ -30,7 +30,7 @@ public class Controller implements Observer {
 					e1.printStackTrace();
 				}
 				break;
-			case NeuerSpielzug_SUCCESS:
+			case NeuerSpielzug_WuerfelnSuccess:
 //				System.out.println("Eingabe:");
 //				s = terminal.readLine();
 //				while (stringToInt(s) == null) {
@@ -74,8 +74,13 @@ public class Controller implements Observer {
 				break;
 			
 			case WarteAufSelbsttestEingabe:
+				i = null;
+				while (i == null || i >= 2 || i < 0) {
+					s = terminal.readLine();
+					i = stringToInt(s);
+				}
+				modelFront.getUseCaseController2().selbstTestStarten();
 				break;
-			
 			default:
 				break;
 		}

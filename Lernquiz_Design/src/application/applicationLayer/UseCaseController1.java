@@ -43,10 +43,10 @@ public class UseCaseController1 {
 			// Wissensstreiter aus Heimatfeld bringen
 			if (letztesWürfelErgebnis == 6) {
 				wissenstreiterAufsSpielfeldBringen();
-				modelFront.setZustand(Zustand.NeuerSpielzug_SUCCESS);
+				modelFront.setZustand(Zustand.NeuerSpielzug_WuerfelnSuccess);
 			} else {
 				// Nächster Spieler am Zug
-				modelFront.setZustand(Zustand.NeuerSpielzug_FAIL);
+				modelFront.setZustand(Zustand.NeuerSpielzug_WuerfelnFail);
 			}
 			modelFront.notifyObservers();
 		} else {
@@ -60,7 +60,7 @@ public class UseCaseController1 {
 				modelFront.notifyObservers();
 			}
 		}
-		aktuellerSpieler = ++aktuellerSpieler % Spielfeld.getInstance().spieler.size();
+		this.setNaechsterSpieler();
 	}
 
 
@@ -106,5 +106,9 @@ public class UseCaseController1 {
 	
 	public Spieler getAktuellerSpieler() {
 		return Spielfeld.getInstance().spieler.get(aktuellerSpieler);
+	}
+	
+	public void setNaechsterSpieler(){
+		this.aktuellerSpieler = ++aktuellerSpieler % Spielfeld.getInstance().spieler.size();
 	}
 }

@@ -50,11 +50,6 @@ public class Spieler {
 		return;
 	}
 
-	public Wissensstandszeiger getWissensstandszeiger() {
-		//Commented automatically
-		//return;
-		return null;
-	}
 
 	public Wissensstandszeiger getWissensstandsZeiger() {
 		return wissensstandszeiger;

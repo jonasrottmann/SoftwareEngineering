@@ -905,11 +905,6 @@
 							<property name="$name" value="SD20_Int_InvocationSpecification1"/>
 							<property name="receiveExecutionSpecificationPuin" value="design:node:::c87hzvii7jombkw2ojun:7x5rzxii7jombbshukwe:7x5rzxii7jomb6-fdai0e:-y8nsowii7jnczltraapf:i624pvii7iiqma-vytcak"/>
 							<property name="call_cachedSequenceNumber" value="1.2"/>
-							<link uin="ieje0riihb3dkqqiz855">
-								<property name="$metaclass" value="SD20_Message_LinkToSignatureNamedElement"/>
-								<participant referencedUin="design:node:::l2gqtvii7jomb3-fffkr9:7x5rzxii7jcrv9-2xlkw4:7x5rzxii7jcrv3sttefq:vctlcpii7iiqma-nf00bt:w2guz2ii7iiqma-36pvrf:i624pvii7iiqma-vytcak" role="Client"></participant>
-								<participant referencedUin="jdt:e_method:src:application.applicationLayer.Spieler.getWissensstandszeiger:getWissensstandszeiger" role="Supplier"></participant>
-							</link>
 						</node>
 						<node uin="l2gqtvii7jtxc2ohba4u">
 							<property name="$metaclass" value="SD20_Int_InvocationSpecification"/>
@@ -1278,7 +1273,7 @@
 							<link uin="ieje0riihcf8vt-vaq7a1">
 								<property name="$metaclass" value="SD20_Message_LinkToSignatureNamedElement"/>
 								<participant referencedUin="design:node:::l2gqtvihxwdwagoan24:7x5rzxihxwcgr5ludept:7x5rzxihxwcgqschmxrg:c87hzvihxvr66q-1tpbjs:-y8nsowihxvqoaj-4jt3cn:-yrgd8eihxvpbqi6abino" role="Client"></participant>
-								<participant referencedUin="jdt:e_method:src:application.applicationLayer.UseCaseController2.wissensstandszeigerErhoehen:wissensstandszeigerErhoehen" role="Supplier"></participant>
+								<participant referencedUin="jdt:e_method:src:application.applicationLayer.UseCaseController2.selbstTestStarten:selbstTestStarten" role="Supplier"></participant>
 							</link>
 						</node>
 						<link uin="ieje0rihxwcgr5-i0bpy9">

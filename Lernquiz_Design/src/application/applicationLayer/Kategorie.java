@@ -14,7 +14,7 @@ public class Kategorie {
 	}
 	
 	public Frage getRandomFrage() {
-		return fragen.get(new Random().nextInt(fragen.size()-1));
+		return fragen.get(new Random().nextInt((fragen.size()-1) < 1 ? 1 : 1));
 	}
 	
 	public void addFrage(Frage frage) {
