@@ -23,11 +23,11 @@ public class Spielfeld {
 	}
 	
 
-	public Spieler isFeldBesetzt(int feld) {
+	public Wissensstreiter isFeldBesetzt(int feld) {
 		for (Spieler spieler : this.spieler) {
 			for (Wissensstreiter wissensstreiter : spieler.getWissensstreiter()) {
 				if(wissensstreiter.getPosition() == feld){
-					return spieler;
+					return wissensstreiter;
 				}
 			}
 		}

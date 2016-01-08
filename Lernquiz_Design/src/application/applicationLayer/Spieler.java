@@ -11,10 +11,10 @@ public class Spieler {
 	
 	public Spieler(String name) {
 		for (int i = 0; i < 3; i++) {
-			wissensstreiter.add(new Wissensstreiter());
+			wissensstreiter.add(new Wissensstreiter(Spieler.this));
 		}
 		this.wissensstandszeiger = new Wissensstandszeiger();
-		this.name = name;
+		this.name = name;		
 	}
 
 	public boolean alleWissensstreiterImHeimatfeld(){

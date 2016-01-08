@@ -20,6 +20,7 @@ public class Controller implements Observer {
 	public void update(Observable obs, Object arg) {
 		modelFront = (ModelFront) obs;
 		String s;
+		Integer i;
 		switch(modelFront.getZustand()) {
 			case NeuerSpielzug_FAIL:
 				try {
@@ -43,20 +44,38 @@ public class Controller implements Observer {
 					e.printStackTrace();
 				}
 				break;
-			case WarteAufAntwortEingabe:
-				break;
-			case WarteAufKategorieEingabe:
-				break;
-			case WarteAufSelbsttestEingabe:
-				break;
 			case WarteAufWissensstreiterEingabe:
-				Integer i = null;
+				i = null;
 				while (i == null || i >= 4 || i < 0) {
 					s = terminal.readLine();
 					i = stringToInt(s);
 				}
 				modelFront.getUseCaseController1().wissensstreiterBewegen(modelFront.getUseCaseController1().getAktuellerSpieler().getWissensstreiter().get(i));
 				break;
+				
+				
+				
+				
+			case WarteAufKategorieEingabe:
+				i = null;
+				while (i == null || i >= 4 || i < 0) {
+					s = terminal.readLine();
+					i = stringToInt(s);
+				}
+				modelFront.getUseCaseController2().kategorieSetzen(Spielfeld.getInstance().kategorien.get(i));
+				break;
+			case WarteAufAntwortEingabe:
+				i = null;
+				while (i == null || i >= 4 || i < 0) {
+					s = terminal.readLine();
+					i = stringToInt(s);
+				}
+				modelFront.getUseCaseController2().antwortPruefen(i);
+				break;
+			
+			case WarteAufSelbsttestEingabe:
+				break;
+			
 			default:
 				break;
 		}

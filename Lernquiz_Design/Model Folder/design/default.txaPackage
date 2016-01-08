@@ -1278,7 +1278,7 @@
 							<link uin="ieje0riihcf8vt-vaq7a1">
 								<property name="$metaclass" value="SD20_Message_LinkToSignatureNamedElement"/>
 								<participant referencedUin="design:node:::l2gqtvihxwdwagoan24:7x5rzxihxwcgr5ludept:7x5rzxihxwcgqschmxrg:c87hzvihxvr66q-1tpbjs:-y8nsowihxvqoaj-4jt3cn:-yrgd8eihxvpbqi6abino" role="Client"></participant>
-								<participant referencedUin="jdt:e_method:src:application.applicationLayer.UseCaseController2.wissensstandszeigerErhoehen:wissensstandszeigerErhoehen~QKategorie;" role="Supplier"></participant>
+								<participant referencedUin="jdt:e_method:src:application.applicationLayer.UseCaseController2.wissensstandszeigerErhoehen:wissensstandszeigerErhoehen" role="Supplier"></participant>
 							</link>
 						</node>
 						<link uin="ieje0rihxwcgr5-i0bpy9">

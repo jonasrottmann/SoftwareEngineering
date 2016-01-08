@@ -66,11 +66,11 @@ public class UseCaseController1 {
 
 	public void wissensstreiterBewegen(Wissensstreiter wissensstreiter) {
 		int position = (wissensstreiter.getPosition() + würfelErgebnisse.get(würfelErgebnisse.size() - 1)) % 48;
-		Spieler spielerAufZielfeld = spielfeld.isFeldBesetzt(position);
+		Wissensstreiter kollidierenderWissensstreiter = spielfeld.isFeldBesetzt(position);
 		wissensstreiter.setPosition(position);
 		
-		if(spielerAufZielfeld != null){
-			modelFront.getUseCaseController2().testen(ws1, ws2);
+		if(kollidierenderWissensstreiter != null){
+			modelFront.getUseCaseController2().wissenstestStarten(wissensstreiter, kollidierenderWissensstreiter);
 			//wissenstestStarten
 			// TODO
 			System.out.println("WISSENSSTEST!");
@@ -78,12 +78,12 @@ public class UseCaseController1 {
 	}
 	
 	private void wissenstreiterAufsSpielfeldBringen() {
-		Spieler kollidierenderSpieler = Spielfeld.getInstance().isFeldBesetzt(Spielfeld.STARTFELDER[aktuellerSpieler]);
+		Wissensstreiter kollidierenderWissensstreiter = Spielfeld.getInstance().isFeldBesetzt(Spielfeld.STARTFELDER[aktuellerSpieler]);
 		
-		if (kollidierenderSpieler != null) {
+		if (kollidierenderWissensstreiter != null) {
 			// TODO Checken außerhalb dieser Methode
 			// Startfeld des aktuellen Spielers ist schon besetzt.
-			if (Spielfeld.getInstance().spieler.get(aktuellerSpieler).equals(kollidierenderSpieler)) {
+			if (Spielfeld.getInstance().spieler.get(aktuellerSpieler).getWissensstreiter().contains(kollidierenderWissensstreiter)) {
 				// Startfeld ist von uns selbst besetzt
 				modelFront.setZustand(Zustand.WarteAufWissensstreiterEingabe);
 				modelFront.notifyObservers();

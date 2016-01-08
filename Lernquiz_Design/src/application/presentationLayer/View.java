@@ -39,17 +39,22 @@ public class View implements Observer {
 				printFremdeWissensstreiter();
 				System.out.println("Welcher Wissensstreiter soll bewegt werden?");
 				break;
-			case WarteAufAntwortEingabe:
+				
+				
+				
+			case WarteAufKategorieEingabe:
 				// P0 kollidiert mit H2
 				// Peter testet Hans
+				// Kat wählen
+				System.out.println("Warte auf Eingabe");
+				break;
+			case WarteAufAntwortEingabe:
 				// Frage
 				// Antwort 1	Antwort 2
 				// Antwort 3	Antwort 4
 				System.out.println("Wähle die richtige Antwort aus.");
 				break;
-			case WarteAufKategorieEingabe:
-				System.out.println("Warte auf Eingabe");
-				break;
+			
 			case WarteAufSelbsttestEingabe:
 				System.out.println("Warte auf Eingabe");
 				break;
