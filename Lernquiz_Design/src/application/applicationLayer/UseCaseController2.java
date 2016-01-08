@@ -6,7 +6,15 @@ public class UseCaseController2 {
 	private Frage aktuelleFrage;
 	private Spieler testenderSpieler;
 	private Spieler getesteterSpieler;
+	private ModelFront modelFront;
 
+	
+	
+
+	public UseCaseController2(ModelFront modelFront) {
+		this.modelFront = modelFront;
+	}
+	
 	public void selbstTesten(boolean selbstTesten) {
 		return;
 	}

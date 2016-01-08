@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Kategorie {
 
-	private ArrayList<Frage> fragen;
+	private ArrayList<Frage> fragen = new ArrayList<Frage>();
 	private String name;
 	
 	public Kategorie(String name) {

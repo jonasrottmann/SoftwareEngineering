@@ -2,14 +2,20 @@ package application.applicationLayer;
 
 import java.util.Observable;
 
+import application.presentationLayer.Controller;
+import application.presentationLayer.View;
+
 public class ModelFront extends Observable {
-	private UseCaseController1 useCaseController1;
-	private UseCaseController2 useCaseController2;
+	private UseCaseController1 uc1;
+	private UseCaseController2 uc2;
 	private Zustand zustand;
 	
-	public ModelFront() {
-		useCaseController1 = new UseCaseController1();
-		useCaseController2 = new UseCaseController2();
+	public ModelFront(View v, Controller c) {
+		// Zuerst Controller registrieren, da Reihenfolge der Benachrichtigung entgegengesetzt
+		addObserver(c);
+		addObserver(v);
+		uc1 = new UseCaseController1(ModelFront.this);
+		uc2 = new UseCaseController2(ModelFront.this);		
 	}
 
 	public Zustand getZustand() {
@@ -21,12 +27,19 @@ public class ModelFront extends Observable {
 	}
 
 	public UseCaseController1 getUseCaseController1() {
-		return useCaseController1;
+		return uc1;
 	}
 
 	public UseCaseController2 getUseCaseController2() {
-		return useCaseController2;
+		return uc2;
 	}
 	
+	public void wuerfeln() {
+		uc1.wuerfeln();
+	}
 	
+	public void notifyObservers() {
+		setChanged();
+		super.notifyObservers();
+	}
 }

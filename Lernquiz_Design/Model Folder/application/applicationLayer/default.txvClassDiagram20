@@ -55,19 +55,6 @@
 			<property name="bounds" value="352,95,114,80"/>
 			<property name="location_set_by_user" value="true"/>
 		</reference>
-		<reference referencedUin="jdt:e_class:src:application.applicationLayer.ModelFront">
-			<property name="bounds" value="5,5,200,138"/>
-			<property name="location_set_by_user" value="true"/>
-			<property name="collapsedCompartments" value="Operation20"/>
-			<reference referencedUin="jdt:l_ast:src:application.applicationLayer.ModelFront:useCaseController2">
-				<property name="sourceAnchor" value="125,148"/>
-				<property name="targetAnchor" value="125,200"/>
-			</reference>
-			<reference referencedUin="jdt:l_ast:src:application.applicationLayer.ModelFront:useCaseController1">
-				<property name="sourceAnchor" value="95,65"/>
-				<property name="targetAnchor" value="95,65"/>
-			</reference>
-		</reference>
 		<reference referencedUin="jdt:e_class:src:application.applicationLayer.UseCaseController1">
 			<property name="bounds" value="0,0,183,152"/>
 			<property name="location_set_by_user" value="true"/>
@@ -84,6 +71,10 @@
 			<property name="bounds" value="35,195,200,182"/>
 			<property name="location_set_by_user" value="true"/>
 			<property name="collapsedCompartments" value=""/>
+			<reference referencedUin="jdt:l_ast:src:application.applicationLayer.UseCaseController2:aktuelleFrage">
+				<property name="sourceAnchor" value="189,200"/>
+				<property name="targetAnchor" value="189,123"/>
+			</reference>
 			<reference referencedUin="jdt:l_ast:src:application.applicationLayer.UseCaseController2:testenderSpieler">
 				<property name="sourceAnchor" value="211,200"/>
 				<property name="targetAnchor" value="290,109"/>
@@ -91,10 +82,6 @@
 			<reference referencedUin="jdt:l_ast:src:application.applicationLayer.UseCaseController2:getesteterSpieler">
 				<property name="sourceAnchor" value="218,200"/>
 				<property name="targetAnchor" value="180,244"/>
-			</reference>
-			<reference referencedUin="jdt:l_ast:src:application.applicationLayer.UseCaseController2:aktuelleFrage">
-				<property name="sourceAnchor" value="189,200"/>
-				<property name="targetAnchor" value="189,123"/>
 			</reference>
 		</reference>
 		<reference referencedUin="jdt:e_class:src:application.applicationLayer.Main">
