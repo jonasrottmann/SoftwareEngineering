@@ -1,4 +1,4 @@
-package application.applicationLayer;
+package application.applicationLayer.spiel;
 public class Wissensstreiter {
 	public static final int POSITION_IM_HEIMATFELD = -1;
 	private int position;

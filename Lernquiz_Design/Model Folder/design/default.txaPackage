@@ -636,7 +636,7 @@
 			<link uin="ieje0riihalua5u0uoir">
 				<property name="$metaclass" value="SD20_Lifeline_LinkToConnectableElement"/>
 				<participant referencedUin="design:node:::-y8nsowii8p9z5tun989i:i624pvii7iiqma-vytcak" role="Client"></participant>
-				<participant referencedUin="jdt:e_class:src:application.applicationLayer.Spielfeld" role="Supplier"></participant>
+				<participant referencedUin="jdt:e_class:src:application.applicationLayer.spiel.Spielfeld" role="Supplier"></participant>
 			</link>
 		</node>
 		<node uin="1g64yii7k25mjcdhxpk">
@@ -687,7 +687,7 @@
 			<link uin="ieje0riihaleoh-vstwxb">
 				<property name="$metaclass" value="SD20_Lifeline_LinkToConnectableElement"/>
 				<participant referencedUin="design:node:::-y8nsowii7jrr9j-ybkeel:i624pvii7iiqma-vytcak" role="Client"></participant>
-				<participant referencedUin="jdt:e_class:src:application.applicationLayer.Wissensstandszeiger" role="Supplier"></participant>
+				<participant referencedUin="jdt:e_class:src:application.applicationLayer.spiel.Wissensstandszeiger" role="Supplier"></participant>
 			</link>
 		</node>
 		<node uin="-y8nsowii7jnczltraapf">
@@ -767,7 +767,7 @@
 			<link uin="ieje0riihaidv5foi654">
 				<property name="$metaclass" value="SD20_Lifeline_LinkToConnectableElement"/>
 				<participant referencedUin="design:node:::-y8nsowii7jnczltraapf:i624pvii7iiqma-vytcak" role="Client"></participant>
-				<participant referencedUin="jdt:e_class:src:application.applicationLayer.Spieler" role="Supplier"></participant>
+				<participant referencedUin="jdt:e_class:src:application.applicationLayer.spiel.Spieler" role="Supplier"></participant>
 			</link>
 		</node>
 		<node uin="-y8nsowii7iuhvjh8uo5e">
@@ -853,7 +853,7 @@
 			<link uin="ieje0riihaizp6-c6wha4">
 				<property name="$metaclass" value="SD20_Lifeline_LinkToConnectableElement"/>
 				<participant referencedUin="design:node:::-y8nsowii7iuhvjh8uo5e:i624pvii7iiqma-vytcak" role="Client"></participant>
-				<participant referencedUin="jdt:e_class:src:application.applicationLayer.Frage" role="Supplier"></participant>
+				<participant referencedUin="jdt:e_class:src:application.applicationLayer.spiel.Frage" role="Supplier"></participant>
 			</link>
 		</node>
 		<node uin="w2guz2ii7iiqma-36pvrf">
@@ -872,7 +872,7 @@
 					<link uin="ieje0riihb26vb-lgv23g">
 						<property name="$metaclass" value="SD20_Message_LinkToSignatureNamedElement"/>
 						<participant referencedUin="design:node:::l2gqtvii7iw12ubhck7f:vctlcpii7iiqma-nf00bt:w2guz2ii7iiqma-36pvrf:i624pvii7iiqma-vytcak" role="Client"></participant>
-						<participant referencedUin="jdt:e_method:src:application.applicationLayer.Frage.getRichtigeAntwortNummer:getRichtigeAntwortNummer" role="Supplier"></participant>
+						<participant referencedUin="jdt:e_method:src:application.applicationLayer.spiel.Frage.getRichtigeAntwortNummer:getRichtigeAntwortNummer" role="Supplier"></participant>
 					</link>
 				</node>
 				<node uin="7x5rzxii7jcrv3sttefq">
@@ -915,7 +915,7 @@
 							<link uin="ieje0riihbei63vntp1l">
 								<property name="$metaclass" value="SD20_Message_LinkToSignatureNamedElement"/>
 								<participant referencedUin="design:node:::l2gqtvii7jtxc2ohba4u:7x5rzxii7jcrv9-2xlkw4:7x5rzxii7jcrv3sttefq:vctlcpii7iiqma-nf00bt:w2guz2ii7iiqma-36pvrf:i624pvii7iiqma-vytcak" role="Client"></participant>
-								<participant referencedUin="jdt:e_method:src:application.applicationLayer.Wissensstandszeiger.getWissensstandVonKategorie:getWissensstandVonKategorie~I" role="Supplier"></participant>
+								<participant referencedUin="jdt:e_method:src:application.applicationLayer.spiel.Wissensstandszeiger.getWissensstandVonKategorie:getWissensstandVonKategorie~I" role="Supplier"></participant>
 							</link>
 						</node>
 						<node uin="7x5rzxii7jwpjs7ii3zz">
@@ -951,7 +951,7 @@
 									<link uin="ieje0riihbsl9w-1r6n70">
 										<property name="$metaclass" value="SD20_Message_LinkToSignatureNamedElement"/>
 										<participant referencedUin="design:node:::l2gqtvii7jzg0yolrrp2:7x5rzxii7jwpjx-n4u9jj:7x5rzxii7jwpjs7ii3zz:7x5rzxii7jcrv9-2xlkw4:7x5rzxii7jcrv3sttefq:vctlcpii7iiqma-nf00bt:w2guz2ii7iiqma-36pvrf:i624pvii7iiqma-vytcak" role="Client"></participant>
-										<participant referencedUin="jdt:e_method:src:application.applicationLayer.Spieler.wissensstandInkrementieren:wissensstandInkrementieren~QKategorie;" role="Supplier"></participant>
+										<participant referencedUin="jdt:e_method:src:application.applicationLayer.spiel.Spieler.wissensstandInkrementieren:wissensstandInkrementieren~QKategorie;" role="Supplier"></participant>
 									</link>
 								</node>
 								<link uin="ieje0rii7jwpjy9i117h">
@@ -971,7 +971,7 @@
 									<link uin="ieje0riihbuq1v24bk7v">
 										<property name="$metaclass" value="SD20_Message_LinkToSignatureNamedElement"/>
 										<participant referencedUin="design:node:::l2gqtvii7k3srq-tv0yf0:7x5rzxii7jwpk0-d3jxsw:7x5rzxii7jwpjs7ii3zz:7x5rzxii7jcrv9-2xlkw4:7x5rzxii7jcrv3sttefq:vctlcpii7iiqma-nf00bt:w2guz2ii7iiqma-36pvrf:i624pvii7iiqma-vytcak" role="Client"></participant>
-										<participant referencedUin="jdt:e_method:src:application.applicationLayer.Spieler.wissensstandInkrementieren:wissensstandInkrementieren~QKategorie;" role="Supplier"></participant>
+										<participant referencedUin="jdt:e_method:src:application.applicationLayer.spiel.Spieler.wissensstandInkrementieren:wissensstandInkrementieren~QKategorie;" role="Supplier"></participant>
 									</link>
 								</node>
 								<link uin="ieje0rii7jwpk1lqrzpq">
@@ -1009,7 +1009,7 @@
 							<link uin="ieje0riihc0a6lyjvf6e">
 								<property name="$metaclass" value="SD20_Message_LinkToSignatureNamedElement"/>
 								<participant referencedUin="design:node:::l2gqtvii7jdalt-53223m:7x5rzxii7jcrvg-s8kqg0:7x5rzxii7jcrv3sttefq:vctlcpii7iiqma-nf00bt:w2guz2ii7iiqma-36pvrf:i624pvii7iiqma-vytcak" role="Client"></participant>
-								<participant referencedUin="jdt:e_method:src:application.applicationLayer.Spieler.alleWissensstreiterImHeimatfeld:alleWissensstreiterImHeimatfeld" role="Supplier"></participant>
+								<participant referencedUin="jdt:e_method:src:application.applicationLayer.spiel.Spieler.alleWissensstreiterImHeimatfeld:alleWissensstreiterImHeimatfeld" role="Supplier"></participant>
 							</link>
 						</node>
 						<node uin="7x5rzxii7l0kqo-cc09bj">

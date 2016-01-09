@@ -1,12 +1,11 @@
-package application.applicationLayer;
+package application.applicationLayer.spiel;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Spieler {
 	
-	private Wissensstandszeiger wissensstandszeiger;
-	private ArrayList<Wissensstreiter> wissensstreiter = new ArrayList<Wissensstreiter>();
+	private final Wissensstandszeiger wissensstandszeiger;
+	private final ArrayList<Wissensstreiter> wissensstreiter = new ArrayList<Wissensstreiter>();
 	private final String name;
 	
 	public Spieler(String name) {
@@ -50,21 +49,12 @@ public class Spieler {
 		return;
 	}
 
-
 	public Wissensstandszeiger getWissensstandsZeiger() {
 		return wissensstandszeiger;
 	}
 
-	public void setWissensstandsZeiger(Wissensstandszeiger wissensstandsZeiger) {
-		this.wissensstandszeiger = wissensstandsZeiger;
-	}
-
 	public ArrayList<Wissensstreiter> getWissensstreiter() {
 		return wissensstreiter;
-	}
-
-	public void setWissensstreiter(ArrayList<Wissensstreiter> wissensstreiter) {
-		this.wissensstreiter = wissensstreiter;
 	}
 	
 	public Wissensstreiter getWissensstreiterAusHeimatfeld() {
@@ -76,6 +66,16 @@ public class Spieler {
 		return null;
 	}
 	
+	public ArrayList<Kategorie> getNichtVolleKategorien() {
+		ArrayList<Kategorie> tmpKategorien = new ArrayList<Kategorie>();
+		for (int i = 0 ; i < Spielfeld.getInstance().getKategorien().size(); i++ ) {
+			int wissensstand = wissensstandszeiger.getWissensstandVonKategorie(i);
+			if (wissensstand != Wissensstandszeiger.MAX_WISSENSSTAND) {
+				tmpKategorien.add(Spielfeld.getInstance().getKategorien().get(i));
+			}
+		}
+		return tmpKategorien;
+	}
 	
 	public String getName() {
 		return name;

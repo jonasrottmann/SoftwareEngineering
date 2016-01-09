@@ -5,24 +5,24 @@ import java.util.Observable;
 import application.presentationLayer.Controller;
 import application.presentationLayer.View;
 
-public class ModelFront extends Observable {
+public class Fassade extends Observable {
 	private UseCaseController1 uc1;
 	private UseCaseController2 uc2;
-	private Zustand zustand;
+	private Zustaende zustand;
 	
-	public ModelFront(View v, Controller c) {
+	public Fassade(View v, Controller c) {
 		// Zuerst Controller registrieren, da Reihenfolge der Benachrichtigung entgegengesetzt
 		addObserver(c);
 		addObserver(v);
-		uc1 = new UseCaseController1(ModelFront.this);
-		uc2 = new UseCaseController2(ModelFront.this);		
+		uc1 = new UseCaseController1(Fassade.this);
+		uc2 = new UseCaseController2(Fassade.this);		
 	}
 
-	public Zustand getZustand() {
+	public Zustaende getZustand() {
 		return zustand;
 	}
 
-	public void setZustand(Zustand zustand) {
+	public void setZustand(Zustaende zustand) {
 		this.zustand = zustand;
 	}
 
@@ -34,7 +34,7 @@ public class ModelFront extends Observable {
 		return uc2;
 	}
 	
-	public void wuerfeln() {
+	public void spielzugStarten() {
 		uc1.wuerfeln();
 	}
 	

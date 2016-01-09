@@ -1,16 +1,13 @@
-package application.applicationLayer;
+package application.applicationLayer.spiel;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Spielfeld {
-	
-
 	private static Spielfeld mSpielfeld;
 	public static final int ANZAHL_FELDER = 48;
 	public static final int[] STARTFELDER = {0, 12, 24, 36}; // Spieler 0, 1, 2, 3
-	public final List<Spieler> spieler = new ArrayList<Spieler>();
-	public final List<Kategorie> kategorien = new ArrayList<Kategorie>();
+	private final ArrayList<Spieler> spieler = new ArrayList<Spieler>();
+	private final ArrayList<Kategorie> kategorien = new ArrayList<Kategorie>();
 	
 	
 	private Spielfeld() {
@@ -22,7 +19,6 @@ public class Spielfeld {
 		return mSpielfeld;
 	}
 	
-
 	public Wissensstreiter isFeldBesetzt(int feld) {
 		for (Spieler spieler : this.spieler) {
 			for (Wissensstreiter wissensstreiter : spieler.getWissensstreiter()) {
@@ -33,8 +29,12 @@ public class Spielfeld {
 		}
 		return null;
 	}
+	
+	public ArrayList<Spieler> getSpieler() {
+		return spieler;
+	}
 
-	public void wissensstreiterZurücksetzen(Wissensstreiter wissensstreiter, boolean antwortRichtig) {
-		return;
+	public ArrayList<Kategorie> getKategorien() {
+		return kategorien;
 	}
 }

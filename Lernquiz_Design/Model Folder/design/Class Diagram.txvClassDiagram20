@@ -10,14 +10,14 @@
 			<property name="location_set_by_user" value="true"/>
 			<property name="collapsedCompartments" value=""/>
 			<property name="$shortcutReference" value="true"/>
-			<reference referencedUin="jdt:l_ast:src:application.presentationLayer.Controller:modelFront">
-				<property name="sourceAnchor" value="468,184"/>
-				<property name="targetAnchor" value="341,278"/>
-			</reference>
 			<reference referencedUin="jdt:l_ast:src:application.presentationLayer.Controller:view">
 				<property name="sourceAnchor" value="460,182"/>
 				<property name="targetAnchor" value="260,182"/>
 				<property name="location_set_by_user" value="true"/>
+			</reference>
+			<reference referencedUin="jdt:l_ast:src:application.presentationLayer.Controller:modelront">
+				<property name="sourceAnchor" value="468,184"/>
+				<property name="targetAnchor" value="341,278"/>
 			</reference>
 		</reference>
 		<reference referencedUin="jdt:e_class:src:application.presentationLayer.View">

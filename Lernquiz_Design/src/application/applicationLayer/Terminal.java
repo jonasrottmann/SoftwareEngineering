@@ -6,15 +6,15 @@ import java.io.InputStreamReader;
 
 public class Terminal {
 
-	private BufferedReader console;
+	private BufferedReader konsole;
 	
 	public Terminal() {
-		console = new BufferedReader(new InputStreamReader(System.in));
+		konsole = new BufferedReader(new InputStreamReader(System.in));
 	}
 
 	public String readLine() {
 		try {
-			return console.readLine();
+			return konsole.readLine();
 		} catch (IOException e) {
 			return "\n";
 		}

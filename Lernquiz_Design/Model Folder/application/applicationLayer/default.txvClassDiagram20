@@ -6,55 +6,6 @@
 		<property name="$defaultDiagram" value="true"/>
 		<property name="$metaclass" value="ClassDiagram20"/>
 		<property name="__options" value="option.nlayout.recursive=true"/>
-		<reference referencedUin="jdt:e_class:src:application.applicationLayer.Kategorie">
-			<property name="bounds" value="395,-4,158,123"/>
-			<property name="location_set_by_user" value="true"/>
-			<property name="collapsedCompartments" value=""/>
-			<reference referencedUin="jdt:l_ast:src:application.applicationLayer.Kategorie:fragen">
-				<property name="sourceAnchor" value="400,41"/>
-				<property name="targetAnchor" value="339,41"/>
-				<reference referencedUin="label:supplierCardinality:jdt:l_ast:src:application.applicationLayer.Kategorie:fragen">
-					<property name="bounds" value="349,19,21,19"/>
-				</reference>
-				<reference referencedUin="label:clientCardinality:jdt:l_ast:src:application.applicationLayer.Kategorie:fragen">
-					<property name="bounds" value="380,19,10,19"/>
-				</reference>
-			</reference>
-		</reference>
-		<reference referencedUin="jdt:e_class:src:application.applicationLayer.Spieler">
-			<property name="bounds" value="114,104,200,182"/>
-			<property name="location_set_by_user" value="true"/>
-			<reference referencedUin="jdt:l_ast:src:application.applicationLayer.Spieler:wissensstreiter">
-				<property name="sourceAnchor" value="319,152"/>
-				<property name="targetAnchor" value="357,152"/>
-				<reference referencedUin="label:supplierCardinality:jdt:l_ast:src:application.applicationLayer.Spieler:wissensstreiter">
-					<property name="bounds" value="326,130,21,19"/>
-				</reference>
-				<reference referencedUin="label:clientCardinality:jdt:l_ast:src:application.applicationLayer.Spieler:wissensstreiter">
-					<property name="bounds" value="276,130,10,19"/>
-				</reference>
-			</reference>
-			<reference referencedUin="jdt:l_ast:src:application.applicationLayer.Spieler:wissensstandszeiger">
-				<property name="sourceAnchor" value="319,150"/>
-				<property name="targetAnchor" value="397,150"/>
-			</reference>
-		</reference>
-		<reference referencedUin="jdt:e_class:src:application.applicationLayer.Wissensstandszeiger">
-			<property name="bounds" value="392,95,200,92"/>
-			<property name="location_set_by_user" value="true"/>
-		</reference>
-		<reference referencedUin="jdt:e_class:src:application.applicationLayer.Frage">
-			<property name="bounds" value="134,-4,200,122"/>
-			<property name="location_set_by_user" value="true"/>
-		</reference>
-		<reference referencedUin="jdt:e_class:src:application.applicationLayer.Spielfeld">
-			<property name="bounds" value="25,104,200,107"/>
-			<property name="location_set_by_user" value="true"/>
-		</reference>
-		<reference referencedUin="jdt:e_class:src:application.applicationLayer.Wissensstreiter">
-			<property name="bounds" value="352,95,114,80"/>
-			<property name="location_set_by_user" value="true"/>
-		</reference>
 		<reference referencedUin="jdt:e_class:src:application.applicationLayer.UseCaseController1">
 			<property name="bounds" value="0,0,183,152"/>
 			<property name="location_set_by_user" value="true"/>
@@ -75,17 +26,66 @@
 				<property name="sourceAnchor" value="189,200"/>
 				<property name="targetAnchor" value="189,123"/>
 			</reference>
-			<reference referencedUin="jdt:l_ast:src:application.applicationLayer.UseCaseController2:testenderSpieler">
-				<property name="sourceAnchor" value="211,200"/>
-				<property name="targetAnchor" value="290,109"/>
-			</reference>
-			<reference referencedUin="jdt:l_ast:src:application.applicationLayer.UseCaseController2:getesteterSpieler">
+			<reference referencedUin="jdt:l_ast:src:application.applicationLayer.UseCaseController2:testenderWissensstreiter">
 				<property name="sourceAnchor" value="218,200"/>
 				<property name="targetAnchor" value="180,244"/>
+			</reference>
+			<reference referencedUin="jdt:l_ast:src:application.applicationLayer.UseCaseController2:getesteterWissensstreiter">
+				<property name="sourceAnchor" value="211,200"/>
+				<property name="targetAnchor" value="290,109"/>
 			</reference>
 		</reference>
 		<reference referencedUin="jdt:e_class:src:application.applicationLayer.Main">
 			<property name="bounds" value="392,221,95,80"/>
+			<property name="location_set_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:application.applicationLayer.spiel.Spieler">
+			<property name="bounds" value="114,104,200,182"/>
+			<property name="location_set_by_user" value="true"/>
+			<reference referencedUin="jdt:l_ast:src:application.applicationLayer.spiel.Spieler:wissensstreiter">
+				<property name="sourceAnchor" value="319,152"/>
+				<property name="targetAnchor" value="357,152"/>
+				<reference referencedUin="label:clientCardinality:jdt:l_ast:src:application.applicationLayer.spiel.Spieler:wissensstreiter">
+					<property name="bounds" value="276,130,10,19"/>
+				</reference>
+				<reference referencedUin="label:supplierCardinality:jdt:l_ast:src:application.applicationLayer.spiel.Spieler:wissensstreiter">
+					<property name="bounds" value="326,130,21,19"/>
+				</reference>
+			</reference>
+			<reference referencedUin="jdt:l_ast:src:application.applicationLayer.spiel.Spieler:wissensstandszeiger">
+				<property name="sourceAnchor" value="319,150"/>
+				<property name="targetAnchor" value="397,150"/>
+			</reference>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:application.applicationLayer.spiel.Wissensstandszeiger">
+			<property name="bounds" value="392,95,200,92"/>
+			<property name="location_set_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:application.applicationLayer.spiel.Kategorie">
+			<property name="bounds" value="395,-4,158,123"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="collapsedCompartments" value=""/>
+			<reference referencedUin="jdt:l_ast:src:application.applicationLayer.spiel.Kategorie:fragen">
+				<property name="sourceAnchor" value="400,41"/>
+				<property name="targetAnchor" value="339,41"/>
+				<reference referencedUin="label:supplierCardinality:jdt:l_ast:src:application.applicationLayer.spiel.Kategorie:fragen">
+					<property name="bounds" value="349,19,21,19"/>
+				</reference>
+				<reference referencedUin="label:clientCardinality:jdt:l_ast:src:application.applicationLayer.spiel.Kategorie:fragen">
+					<property name="bounds" value="380,19,10,19"/>
+				</reference>
+			</reference>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:application.applicationLayer.spiel.Wissensstreiter">
+			<property name="bounds" value="352,95,114,80"/>
+			<property name="location_set_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:application.applicationLayer.spiel.Frage">
+			<property name="bounds" value="134,-4,200,122"/>
+			<property name="location_set_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:application.applicationLayer.spiel.Spielfeld">
+			<property name="bounds" value="25,104,200,107"/>
 			<property name="location_set_by_user" value="true"/>
 		</reference>
 	</view>

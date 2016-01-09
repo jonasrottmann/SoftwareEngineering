@@ -1,68 +1,44 @@
 package application.presentationLayer;
 
+import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
-import application.applicationLayer.ModelFront;
-import application.applicationLayer.Spielfeld;
+import application.applicationLayer.Fassade;
 import application.applicationLayer.Terminal;
+import application.applicationLayer.spiel.Kategorie;
+import application.applicationLayer.spiel.Spielfeld;
+import application.applicationLayer.spiel.Wissensstreiter;
 
 public class Controller implements Observer {
 	
 	private final Terminal terminal;
-	private ModelFront modelFront;
+	private Fassade model;
 	
 	public Controller() {
 		terminal = new Terminal();
 	}
 	
-
 	public void update(Observable obs, Object arg) {
-		modelFront = (ModelFront) obs;
+		model = (Fassade) obs;
 		String s;
 		Integer i;
-		switch(modelFront.getZustand()) {
-			case NeuerSpielzug_WuerfelnFail:
-				try {
-					Thread.sleep(1000);
-				} catch (InterruptedException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
+		switch(model.getZustand()) {
+			case Warte_WissensstreiterEingabe:
+				i = null;
+				while (i == null || i >= 3 || i < 0 ||  model.getUseCaseController1().getAktuellerSpieler().getWissensstreiter().get(i).getPosition() == Wissensstreiter.POSITION_IM_HEIMATFELD) {
+					s = terminal.readLine();
+					i = stringToInt(s);
+				}				
+				model.getUseCaseController1().wissensstreiterBewegen(model.getUseCaseController1().getAktuellerSpieler().getWissensstreiter().get(i));
 				break;
-			case NeuerSpielzug_WuerfelnSuccess:
-//				System.out.println("Eingabe:");
-//				s = terminal.readLine();
-//				while (stringToInt(s) == null) {
-//					System.out.println("Scheiß eingabe... nochmal:");
-//					s = terminal.readLine();
-//				}
-				try {
-					Thread.sleep(1000);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				break;
-			case WarteAufWissensstreiterEingabe:
+			case Warte_KategorieEingabe:
 				i = null;
 				while (i == null || i >= 4 || i < 0) {
 					s = terminal.readLine();
 					i = stringToInt(s);
 				}
-				modelFront.getUseCaseController1().wissensstreiterBewegen(modelFront.getUseCaseController1().getAktuellerSpieler().getWissensstreiter().get(i));
-				break;
-				
-				
-				
-				
-			case WarteAufKategorieEingabe:
-				i = null;
-				while (i == null || i >= 4 || i < 0) {
-					s = terminal.readLine();
-					i = stringToInt(s);
-				}
-				modelFront.getUseCaseController2().kategorieSetzen(Spielfeld.getInstance().kategorien.get(i));
+				model.getUseCaseController2().kategorieSetzen(Spielfeld.getInstance().getKategorien().get(i));
 				break;
 			case WarteAufAntwortEingabe:
 				i = null;
@@ -70,22 +46,30 @@ public class Controller implements Observer {
 					s = terminal.readLine();
 					i = stringToInt(s);
 				}
-				modelFront.getUseCaseController2().antwortPruefen(i);
+				model.getUseCaseController2().antwortPruefen(i);
 				break;
-			
-			case WarteAufSelbsttestEingabe:
+			case Warte_SelbsttestEingabe:
 				i = null;
 				while (i == null || i >= 2 || i < 0) {
 					s = terminal.readLine();
 					i = stringToInt(s);
 				}
-				modelFront.getUseCaseController2().selbstTestStarten();
+				if (i == 1)
+					model.getUseCaseController2().selbstTestStarten();
+				break;
+			case Warte_AlternativeKategorieEingabe:
+				ArrayList<Kategorie> kategorien = model.getUseCaseController2().getGetesteterWissensstreiter().getSpieler().getNichtVolleKategorien();
+				i = null;
+				while (i == null || i >= kategorien.size() || i < 0) {
+					s = terminal.readLine();
+					i = stringToInt(s);
+				}
+				model.getUseCaseController2().alternativeKategorieSetzen(i);
 				break;
 			default:
 				break;
 		}
 	}
-	
 	
 	private Integer stringToInt(String s) {
 		try {

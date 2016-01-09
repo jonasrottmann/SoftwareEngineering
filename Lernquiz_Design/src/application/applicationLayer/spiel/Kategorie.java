@@ -1,4 +1,4 @@
-package application.applicationLayer;
+package application.applicationLayer.spiel;
 
 import java.util.Random;
 import java.util.ArrayList;
@@ -6,8 +6,8 @@ import java.util.ArrayList;
 
 public class Kategorie {
 
-	private ArrayList<Frage> fragen = new ArrayList<Frage>();
-	private String name;
+	private final ArrayList<Frage> fragen = new ArrayList<Frage>();
+	private final String name;
 	
 	public Kategorie(String name) {
 		this.name = name;
@@ -19,5 +19,9 @@ public class Kategorie {
 	
 	public void addFrage(Frage frage) {
 		fragen.add(frage);
+	}
+	
+	public String getName() {
+		return name;
 	}
 }

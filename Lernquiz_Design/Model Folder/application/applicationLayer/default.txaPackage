@@ -46,7 +46,7 @@
 			<link uin="ieje0riihdeazq5enjz">
 				<property name="$metaclass" value="SD20_Lifeline_LinkToConnectableElement"/>
 				<participant referencedUin="design:node:::-y8nsowiih9xce47ncyz1:-yrgd8eiih9wcjk-wkpcuz" role="Client"></participant>
-				<participant referencedUin="jdt:e_class:src:application.applicationLayer.Kategorie" role="Supplier"></participant>
+				<participant referencedUin="jdt:e_class:src:application.applicationLayer.spiel.Kategorie" role="Supplier"></participant>
 			</link>
 		</node>
 		<link uin="ieje0riih9wcjqemogoi">
@@ -139,7 +139,7 @@
 			<link uin="ieje0riihd8a1gqnphg">
 				<property name="$metaclass" value="SD20_Lifeline_LinkToConnectableElement"/>
 				<participant referencedUin="design:node:::-y8nsowiihd7uis-fogi7q:-yrgd8eiihd2sre8qy5ui" role="Client"></participant>
-				<participant referencedUin="jdt:e_class:src:application.applicationLayer.Spielfeld" role="Supplier"></participant>
+				<participant referencedUin="jdt:e_class:src:application.applicationLayer.spiel.Spielfeld" role="Supplier"></participant>
 			</link>
 		</node>
 		<node uin="-y8nsowiihd3pe9eowr4e">
@@ -164,7 +164,7 @@
 			<link uin="ieje0riihd4bm0-n28d4k">
 				<property name="$metaclass" value="SD20_Lifeline_LinkToConnectableElement"/>
 				<participant referencedUin="design:node:::-y8nsowiihd3pe9eowr4e:-yrgd8eiihd2sre8qy5ui" role="Client"></participant>
-				<participant referencedUin="jdt:e_class:src:application.applicationLayer.Wissensstreiter" role="Supplier"></participant>
+				<participant referencedUin="jdt:e_class:src:application.applicationLayer.spiel.Wissensstreiter" role="Supplier"></participant>
 			</link>
 			<link uin="ieje0riihd9f5a-r6i10d">
 				<property name="$metaclass" value="SD20_Int_CommunicationLink"/>

@@ -1,10 +1,9 @@
-package application.applicationLayer;
+package application.applicationLayer.spiel;
 
 public class Wissensstandszeiger {
 	
 	public static final int MAX_WISSENSSTAND = 4;
-	
-	private int[] zeiger = new int[4];
+	private final int[] zeiger = new int[4];
 	
 	public int getWissensstandVonKategorie(int index) {
 		return zeiger[index];

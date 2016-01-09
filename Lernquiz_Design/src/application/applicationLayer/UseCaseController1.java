@@ -3,18 +3,22 @@ package application.applicationLayer;
 import java.util.ArrayList;
 import java.util.Random;
 
+import application.applicationLayer.spiel.Spieler;
+import application.applicationLayer.spiel.Spielfeld;
+import application.applicationLayer.spiel.Wissensstreiter;
+
 public class UseCaseController1 {
 	
 	private int aktuellerSpieler;
 	private Spielfeld spielfeld = Spielfeld.getInstance();
 	private ArrayList<Integer> würfelErgebnisse = new ArrayList<Integer>();
-	private ModelFront modelFront;
+	private Fassade modelFront;
 
 	/**
 	 * 
 	 * @param modelFront
 	 */
-	public UseCaseController1(ModelFront modelFront) {
+	public UseCaseController1(Fassade modelFront) {
 		this.modelFront = modelFront;
 		aktuellerSpieler = 0;
 	}
@@ -23,7 +27,7 @@ public class UseCaseController1 {
 	 * 
 	 */
 	public void wuerfeln(){
-		modelFront.setZustand(Zustand.NeuerSpielzug);
+		modelFront.setZustand(Zustaende.NeuerSpielzug);
 		modelFront.notifyObservers();
 		
 		würfelErgebnisse.clear();
@@ -39,28 +43,44 @@ public class UseCaseController1 {
 		int letztesWürfelErgebnis = würfelErgebnisse.get(würfelErgebnisse.size() - 1);
 		
 		// Spielfeld verändern
-		if(Spielfeld.getInstance().spieler.get(aktuellerSpieler).alleWissensstreiterImHeimatfeld()){
+		if(Spielfeld.getInstance().getSpieler().get(aktuellerSpieler).alleWissensstreiterImHeimatfeld()){
 			// Wissensstreiter aus Heimatfeld bringen
 			if (letztesWürfelErgebnis == 6) {
 				wissenstreiterAufsSpielfeldBringen();
-				modelFront.setZustand(Zustand.NeuerSpielzug_WuerfelnSuccess);
+				modelFront.setZustand(Zustaende.NeuerSpielzug_ErstesWuerfelnSuccess);
+				modelFront.notifyObservers();
 			} else {
 				// Nächster Spieler am Zug
-				modelFront.setZustand(Zustand.NeuerSpielzug_WuerfelnFail);
+				modelFront.setZustand(Zustaende.NeuerSpielzug_ErstesWuerfelnFail);
+				modelFront.notifyObservers();
 			}
-			modelFront.notifyObservers();
 		} else {
 			// Wissensstreiter ziehen
-			if (letztesWürfelErgebnis == 6 && !Spielfeld.getInstance().spieler.get(aktuellerSpieler).alleWissensstreiterAufSpielfeld()) {
-				wissenstreiterAufsSpielfeldBringen();
-				// Problem: Wenn eigener Wissensstreiter auf dem Startfeld steht
+			if (letztesWürfelErgebnis == 6 && !Spielfeld.getInstance().getSpieler().get(aktuellerSpieler).alleWissensstreiterAufSpielfeld()) {
+				Wissensstreiter wissensstreiterAufStartfeld = Spielfeld.getInstance().isFeldBesetzt(Spielfeld.STARTFELDER[aktuellerSpieler]);
+				if (wissensstreiterAufStartfeld != null) {
+					// Startfeld des aktuellen Spielers ist schon besetzt.
+					if (Spielfeld.getInstance().getSpieler().get(aktuellerSpieler).getWissensstreiter().contains(wissensstreiterAufStartfeld)) {
+						// Startfeld ist von uns selbst besetzt
+						// Diesen rücken
+						modelFront.setZustand(Zustaende.Warte_WissensstreiterEingabe);
+						modelFront.notifyObservers();
+					} else {
+						// Starte Wissensstest mit einem Wissenssteiter aus dem Heimatfeld
+						modelFront.getUseCaseController2().wissenstestStarten(Spielfeld.getInstance().getSpieler().get(aktuellerSpieler).getWissensstreiterAusHeimatfeld(), wissensstreiterAufStartfeld);
+					}
+				} else {
+					wissenstreiterAufsSpielfeldBringen();
+					modelFront.setZustand(Zustaende.NeuerSpielzug_WissensstreiterAufSpielfeldgebracht);
+					modelFront.notifyObservers();
+				}
 			} else {
 				// Bewegen
-				modelFront.setZustand(Zustand.WarteAufWissensstreiterEingabe);
+				modelFront.setZustand(Zustaende.Warte_WissensstreiterEingabe);
 				modelFront.notifyObservers();
 			}
 		}
-		this.setNaechsterSpieler();
+		setNaechsterSpieler();
 	}
 
 
@@ -71,33 +91,14 @@ public class UseCaseController1 {
 		
 		if(kollidierenderWissensstreiter != null){
 			modelFront.getUseCaseController2().wissenstestStarten(wissensstreiter, kollidierenderWissensstreiter);
-			//wissenstestStarten
-			// TODO
-			System.out.println("WISSENSSTEST!");
 		}
 	}
 	
 	private void wissenstreiterAufsSpielfeldBringen() {
-		Wissensstreiter kollidierenderWissensstreiter = Spielfeld.getInstance().isFeldBesetzt(Spielfeld.STARTFELDER[aktuellerSpieler]);
-		
-		if (kollidierenderWissensstreiter != null) {
-			// TODO Checken außerhalb dieser Methode
-			// Startfeld des aktuellen Spielers ist schon besetzt.
-			if (Spielfeld.getInstance().spieler.get(aktuellerSpieler).getWissensstreiter().contains(kollidierenderWissensstreiter)) {
-				// Startfeld ist von uns selbst besetzt
-				modelFront.setZustand(Zustand.WarteAufWissensstreiterEingabe);
-				modelFront.notifyObservers();
-			} else {
-				//wissenstestStarten
-				// TODO
-				System.out.println("WISSENSSTEST!");
-			}
-		} else {
-			Spielfeld.getInstance()
-			.spieler.get(aktuellerSpieler)
+		Spielfeld.getInstance()
+			.getSpieler().get(aktuellerSpieler)
 			.getWissensstreiterAusHeimatfeld()
 			.setPosition(Spielfeld.STARTFELDER[aktuellerSpieler]);
-		}
 	}
 	
 	public ArrayList<Integer> getWürfelErgebnisse() {
@@ -105,10 +106,10 @@ public class UseCaseController1 {
 	}
 	
 	public Spieler getAktuellerSpieler() {
-		return Spielfeld.getInstance().spieler.get(aktuellerSpieler);
+		return Spielfeld.getInstance().getSpieler().get(aktuellerSpieler);
 	}
 	
 	public void setNaechsterSpieler(){
-		this.aktuellerSpieler = ++aktuellerSpieler % Spielfeld.getInstance().spieler.size();
+		this.aktuellerSpieler = ++aktuellerSpieler % Spielfeld.getInstance().getSpieler().size();
 	}
 }
