@@ -15,10 +15,12 @@ public class Controller implements Observer {
 	private final Terminal terminal;
 	private Fassade model;
 	
-	public Controller() {
+	public Controller(Fassade modelFront) {
 		terminal = new Terminal();
+		this.model = modelFront;
+		model.addObserver(this);
 	}
-	
+
 	public void update(Observable obs, Object arg) {
 		model = (Fassade) obs;
 		String s;
@@ -40,7 +42,7 @@ public class Controller implements Observer {
 				}
 				model.getUseCaseController2().kategorieSetzen(Spielfeld.getInstance().getKategorien().get(i));
 				break;
-			case WarteAufAntwortEingabe:
+			case Warte_AntwortEingabe:
 				i = null;
 				while (i == null || i >= 4 || i < 0) {
 					s = terminal.readLine();

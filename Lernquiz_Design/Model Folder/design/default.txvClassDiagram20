@@ -7,7 +7,51 @@
 		<property name="$metaclass" value="ClassDiagram20"/>
 		<property name="__options" value="option.nlayout.recursive=true"/>
 		<reference referencedUin="design:view:::V1hexuhihnbui2mbyvtf0">
-			<property name="bounds" value="5,5,124,122"/>
+			<property name="bounds" value="5,5,117,90"/>
+			<property name="location_set_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="design:view:::m0c18miihddhmvlq4q9q">
+			<property name="bounds" value="1057,-4,294,74"/>
+			<property name="location_set_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="design:view:::p079j7iiluue5axmn86j">
+			<property name="bounds" value="5,5,223,74"/>
+			<property name="location_set_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="design:view:::Vam8ynkigw28ib0-wcrm0s">
+			<property name="bounds" value="18,114,220,74"/>
+			<property name="location_set_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="design:view:::Vam8ynkii7iiwru507621">
+			<property name="bounds" value="474,-4,247,74"/>
+			<property name="location_set_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="design:view:::V-b8dyjiihxee698rsu0ry">
+			<property name="bounds" value="247,-4,208,74"/>
+			<property name="location_set_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="design:view:::Vam8ynkigw2er9w-bxn6xf">
+			<property name="bounds" value="247,89,235,74"/>
+			<property name="location_set_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="design:view:::7giumniihddhmu-hiuz6t">
+			<property name="bounds" value="759,-4,250,74"/>
+			<property name="location_set_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="design:view:::V-d9nhuoiihcgw41-jeoytq">
+			<property name="bounds" value="520,214,146,74"/>
+			<property name="location_set_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="design:view:::V-jr6xbaihxdyruks9j9me">
+			<property name="bounds" value="520,89,140,106"/>
+			<property name="location_set_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="design:view:::Vam8ynkii8q1fq75gy1ls">
+			<property name="bounds" value="759,182,242,74"/>
+			<property name="location_set_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="design:view:::Vam8ynkii8ps6vc-yefd0v">
+			<property name="bounds" value="759,89,260,74"/>
 			<property name="location_set_by_user" value="true"/>
 		</reference>
 	</view>

@@ -6,7 +6,7 @@
 		<property name="$metaclass" value="ClassDiagram20"/>
 		<property name="$name" value="Class Diagram"/>
 		<reference referencedUin="jdt:e_class:src:application.presentationLayer.Controller">
-			<property name="bounds" value="455,42,200,137"/>
+			<property name="bounds" value="455,42,200,167"/>
 			<property name="location_set_by_user" value="true"/>
 			<property name="collapsedCompartments" value=""/>
 			<property name="$shortcutReference" value="true"/>
@@ -21,7 +21,7 @@
 			</reference>
 		</reference>
 		<reference referencedUin="jdt:e_class:src:application.presentationLayer.View">
-			<property name="bounds" value="55,35,200,152"/>
+			<property name="bounds" value="55,35,200,197"/>
 			<property name="location_set_by_user" value="true"/>
 			<property name="$shortcutReference" value="true"/>
 			<reference referencedUin="jdt:l_ast:src:application.presentationLayer.View:controller">

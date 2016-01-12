@@ -7,10 +7,11 @@ public enum Zustaende {
 	NeuerSpielzug_WissensstreiterAufSpielfeldgebracht,
 	Warte_WissensstreiterEingabe, 
 	Warte_KategorieEingabe,
-	WarteAufAntwortEingabe,
+	Warte_AntwortEingabe,
 	NeuerSpielzug_FrageFail,
 	NeuerSpielzug_FrageSuccess,
 	Warte_SelbsttestEingabe,
 	Warte_AlternativeKategorieEingabe,
-	GewinnerErmittelt
+	GewinnerErmittelt,
+	StartWissensstest
 }

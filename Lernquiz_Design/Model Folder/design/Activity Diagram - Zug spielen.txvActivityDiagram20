@@ -6,6 +6,12 @@
 		<property name="$metaclass" value="ActivityDiagram20"/>
 		<property name="__options" value="Show Merge_Decision Name=true"/>
 		<property name="$name" value="Activity Diagram - Zug spielen"/>
+		<node uin="156bx8ijb8jgps-wnwbix">
+			<property name="$metaclass" value="Guide"/>
+			<property name="$name" value="Guide1"/>
+			<property name="position" value="724"/>
+			<property name="horizontal" value="false"/>
+		</node>
 		<reference referencedUin="design:node:::-46k66rihxfk9xapcwq9f">
 			<property name="bounds" value="20,20,981,1421"/>
 			<property name="location_set_by_user" value="true"/>

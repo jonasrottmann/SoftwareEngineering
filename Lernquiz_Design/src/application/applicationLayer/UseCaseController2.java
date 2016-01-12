@@ -45,7 +45,7 @@ public class UseCaseController2 {
 		this.aktuelleKategorie = kategorie;
 		this.aktuelleKategorieIndex = Spielfeld.getInstance().getKategorien().indexOf(aktuelleKategorie);
 		this.aktuelleFrage = aktuelleKategorie.getRandomFrage();
-		model.setZustand(Zustaende.WarteAufAntwortEingabe);
+		model.setZustand(Zustaende.Warte_AntwortEingabe);
 		model.notifyObservers();
 	}
 	

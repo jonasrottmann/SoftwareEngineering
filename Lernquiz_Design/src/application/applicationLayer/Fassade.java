@@ -2,22 +2,22 @@ package application.applicationLayer;
 
 import java.util.Observable;
 
-import application.presentationLayer.Controller;
-import application.presentationLayer.View;
+import application.applicationLayer.spiel.Wissensstreiter;
 
 public class Fassade extends Observable {
 	private UseCaseController1 uc1;
 	private UseCaseController2 uc2;
 	private Zustaende zustand;
 	
-	public Fassade(View v, Controller c) {
-		// Zuerst Controller registrieren, da Reihenfolge der Benachrichtigung entgegengesetzt
-		addObserver(c);
-		addObserver(v);
+	public Fassade() {
 		uc1 = new UseCaseController1(Fassade.this);
 		uc2 = new UseCaseController2(Fassade.this);		
 	}
 
+	public void spielzugStarten() {
+		uc1.wuerfeln();
+	}
+	
 	public Zustaende getZustand() {
 		return zustand;
 	}
@@ -34,8 +34,8 @@ public class Fassade extends Observable {
 		return uc2;
 	}
 	
-	public void spielzugStarten() {
-		uc1.wuerfeln();
+	public void wissenstestStarten(Wissensstreiter wissensstreiter, Wissensstreiter kollidierenderWissensstreiter) {
+		uc2.wissenstestStarten(wissensstreiter, kollidierenderWissensstreiter);
 	}
 	
 	public void notifyObservers() {

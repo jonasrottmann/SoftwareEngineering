@@ -14,6 +14,12 @@ public class View implements Observer {
 	
 	private Fassade model;
 	
+	public View(Fassade modelFront) {
+		modelFront.addObserver(this);
+	}
+
+
+
 	public void update(Observable obs, Object arg) {		
 		this.model = (Fassade) obs;
 		
@@ -59,7 +65,7 @@ public class View implements Observer {
 				}
 				System.out.println();
 				break;
-			case WarteAufAntwortEingabe:
+			case Warte_AntwortEingabe:
 				System.out.println(String.format("Es wurde \"%s\" gewählt.", model.getUseCaseController2().getAktuelleKategorie().getName()));
 				System.out.println(model.getUseCaseController2().getAktuelleFrage().getFrage());
 				for (int i = 0; i < model.getUseCaseController2().getAktuelleFrage().getAntworten().length; i++) {
@@ -80,7 +86,9 @@ public class View implements Observer {
 				printWissensstandsanzeiger(model.getUseCaseController2().getGetesteterWissensstreiter().getSpieler());
 				break;
 			case Warte_SelbsttestEingabe:
-				System.out.println(String.format("%s, möchtest du selbst eine Frage der Kategorie %s beantworten?", model.getUseCaseController2().getTestenderWissensstreiter().getSpieler().getName(), model.getUseCaseController2().getAktuelleKategorie().getName()));
+				System.out.println(String.format("Die gewählt Antwort war leider falsch."));
+				printWissensstandsanzeiger(model.getUseCaseController2().getGetesteterWissensstreiter().getSpieler());
+				System.out.println(String.format("%s, möchtest du selbst eine Frage der Kategorie %s beantworten? 0 = nein, 1 = ja", model.getUseCaseController2().getTestenderWissensstreiter().getSpieler().getName(), model.getUseCaseController2().getAktuelleKategorie().getName()));
 				break;
 			case Warte_AlternativeKategorieEingabe:
 				System.out.println(String.format("Der Wissensstand der Kategorie %s ist schon auf dem maximalen Niveau.\nWelche Kategorie soll statt dessen erhöht werden?", model.getUseCaseController2().getAktuelleKategorie().getName()));

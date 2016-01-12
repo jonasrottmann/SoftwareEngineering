@@ -90,7 +90,7 @@ public class UseCaseController1 {
 		wissensstreiter.setPosition(position);
 		
 		if(kollidierenderWissensstreiter != null){
-			modelFront.getUseCaseController2().wissenstestStarten(wissensstreiter, kollidierenderWissensstreiter);
+			modelFront.wissenstestStarten(wissensstreiter, kollidierenderWissensstreiter);
 		}
 	}
 	
